@@ -13,6 +13,7 @@ import java.util.Objects;
  * @author Gerune
  */
 public class Vacancy {
+
     private int id;
     private String name;
     private String description;
@@ -23,12 +24,12 @@ public class Vacancy {
     private String location;
     private Company company;
     private Admin admin;
-    
-  public Vacancy() {
+
+    public Vacancy() {
     }
 
     public Vacancy(int id, String name, String description, Date date, int salary, String experience, BusyMode busymode, String location,
-            Company company, Admin admin ) {
+            Company company, Admin admin) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -64,8 +65,8 @@ public class Vacancy {
     public String getExperience() {
         return experience;
     }
-    
-     public BusyMode getBusymode() {
+
+    public BusyMode getBusymode() {
         return busymode;
     }
 
@@ -104,8 +105,8 @@ public class Vacancy {
     public void setExperience(String experience) {
         this.experience = experience;
     }
-    
-     public void setBusymode(BusyMode busymode) {
+
+    public void setBusymode(BusyMode busymode) {
         this.busymode = busymode;
     }
 
@@ -120,9 +121,10 @@ public class Vacancy {
     public void setAdmin(Admin admin) {
         this.admin = admin;
     }
-/*
+
+    /*
     TODO HashCode
-*/
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -152,7 +154,7 @@ public class Vacancy {
 
     @Override
     public String toString() {
-        return "Vacancy{" + "id=" + id + ", title=" + name + ", description=" + description + ", date=" + date + ", salary=" + salary + ", experience=" + experience + 
-                ", location=" + location + ", company=" + company + ", admin=" + admin + '}';
-    }  
+        return "Vacancy{" + "id=" + id + ", title=" + name + ", description=" + description + ", date=" + date + ", salary=" + salary + ", experience=" + experience
+                + ", location=" + location + ", company=" + company + ", admin=" + admin + '}';
+    }
 }

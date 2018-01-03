@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package DAL;
 
 /**
  *
- * @author Gerune
+ * @author greypk
  */
-public class BusyMode {
-
+public class BaseDAL {
+    
 }

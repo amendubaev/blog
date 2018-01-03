@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author Gerune
  */
 public class Admin {
+
     private int id;
     private String login;
     private String password;
@@ -87,4 +88,3 @@ public class Admin {
         return "Admin{" + "id=" + id + ", login=" + login + ", password=" + password + '}';
     }
 }
-
