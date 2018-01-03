@@ -15,12 +15,13 @@ public class Vacancy {
     private String location;
     private Company company;
     private Admin admin;
+    private Category category;
 
     public Vacancy() {
     }
 
     public Vacancy(int id, String name, String description, Date date, int salary, String experience, BusyMode busymode, String location,
-            Company company, Admin admin) {
+            Company company, Admin admin, Category category) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -31,6 +32,7 @@ public class Vacancy {
         this.location = location;
         this.company = company;
         this.admin = admin;
+        this.category = category;
     }
 
     public int getId() {
@@ -71,6 +73,10 @@ public class Vacancy {
 
     public Admin getAdmin() {
         return admin;
+    }
+    
+    public Category getCategory() {
+        return category;
     }
 
     public void setId(int id) {
@@ -113,6 +119,10 @@ public class Vacancy {
         this.admin = admin;
     }
 
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -146,12 +156,15 @@ public class Vacancy {
         if (!Objects.equals(this.company, other.company)) {
             return false;
         }
+        if (!Objects.equals(this.category, other.category)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
         return "Vacancy{" + "id=" + id + ", title=" + name + ", description=" + description + ", date=" + date + ", salary=" + salary + ", experience=" + experience
-                + ", location=" + location + ", company=" + company + ", admin=" + admin + '}';
+                + ", location=" + location + ", company=" + company + ", admin=" + admin + ", category=" + category +'}';
     }
 }

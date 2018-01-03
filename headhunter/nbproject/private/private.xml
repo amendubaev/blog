@@ -3,7 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Dropbox/highschool/UprProg/blog/headhunter/test/model/AdminTest.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/controllers/VacancyController.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/nbproject/project.properties</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/VacancyDAL.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/web/index.html</file>
+            <file>file:/E:/Programming/RGR/headhunter/nbproject/build-impl.xml</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/controllers/CompanyController.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/mappers/JsonCompany.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/mappers/JsonAdmin.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/mappers/JsonVacancy.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/model/Company.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/CompanyDAL.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/AdminDAL.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/model/Admin.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/model/BusyMode.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/model/Vacancy.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/controllers/AdminController.java</file>
         </group>
     </open-files>
 </project-private>

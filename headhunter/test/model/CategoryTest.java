@@ -42,17 +42,18 @@ public class CategoryTest {
         Company company = new Company(1, "Sberbank", "description", "+123456", null);
         Date date = new Date(2018, 01, 03);
         Admin admin = new Admin(1, "login", "password");
+        Category category = new Category(1, "name");
         
-        Vacancy vacancy1 = new Vacancy(1, "title1", "descr1", date, 20000, "1 year", busymode, "Omsk", company, admin);
-        Vacancy vacancy2 = new Vacancy(2, "title2", "descr2", date, 25000, "2 years", busymode, "Omsk", company, admin);
-        Vacancy vacancy3 = new Vacancy(3, "title3", "descr3", date, 28000, "3 years", busymode, "Omsk", company, admin);
+        Vacancy vacancy1 = new Vacancy(1, "title1", "descr1", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
+        Vacancy vacancy2 = new Vacancy(2, "title2", "descr2", date, 25000, "2 years", busymode, "Omsk", company, admin, category);
+        Vacancy vacancy3 = new Vacancy(3, "title3", "descr3", date, 28000, "3 years", busymode, "Omsk", company, admin, category);
 
         List<Vacancy> vacancySet = new ArrayList<>();
         vacancySet.add(vacancy1);
         vacancySet.add(vacancy2);
-        vacancySet.add(vacancy3);
-
-        Category category = new Category(1, "name", vacancySet);
+        vacancySet.add(vacancy3);    
+        
+        category = new Category(1, "name", vacancySet);
 
         assertEquals(category.getId(), 1);
         assertEquals(category.getName(), "name");
@@ -71,10 +72,11 @@ public class CategoryTest {
         Company company = new Company(1, "Sberbank", "description", "+123456", null);
         Date date = new Date(2018, 01, 03);
         Admin admin = new Admin(1, "login", "password");
+        Category category = new Category(1, "name");
 
-        Vacancy vacancy1 = new Vacancy(1, "title1", "descr1", date, 20000, "1 year", busymode, "Omsk", company, admin);
-        Vacancy vacancy2 = new Vacancy(2, "title2", "descr2", date, 25000, "2 year", busymode, "Omsk", company, admin);
-        Vacancy vacancy3 = new Vacancy(3, "title3", "descr3", date, 28000, "3 year", busymode, "Omsk", company, admin);
+        Vacancy vacancy1 = new Vacancy(1, "title1", "descr1", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
+        Vacancy vacancy2 = new Vacancy(2, "title2", "descr2", date, 25000, "2 year", busymode, "Omsk", company, admin, category);
+        Vacancy vacancy3 = new Vacancy(3, "title3", "descr3", date, 28000, "3 year", busymode, "Omsk", company, admin, category);
 
         List<Vacancy> vacancySet1 = new ArrayList<>();
         vacancySet1.add(vacancy1);
