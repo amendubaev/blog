@@ -113,9 +113,15 @@ public class Vacancy {
         this.admin = admin;
     }
 
-    /*
-    TODO HashCode
-     */
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + this.id;
+        hash = 59 * hash + Objects.hashCode(this.name);
+        hash = 59 * hash + Objects.hashCode(this.admin);
+        return hash;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
