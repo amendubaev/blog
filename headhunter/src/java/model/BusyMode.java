@@ -5,11 +5,10 @@
  */
 package model;
 
-
 /**
  *
  * @author Gerune
  */
-public class Company {
- 
+public class BusyMode {
+    
 }
