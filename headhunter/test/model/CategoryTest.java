@@ -44,8 +44,8 @@ public class CategoryTest {
         Admin admin = new Admin(1, "login", "password");
         
         Vacancy vacancy1 = new Vacancy(1, "title1", "descr1", date, 20000, "1 year", busymode, "Omsk", company, admin);
-        Vacancy vacancy2 = new Vacancy(2, "title2", "descr2", date, 25000, "2 year", busymode, "Omsk", company, admin);
-        Vacancy vacancy3 = new Vacancy(3, "title3", "descr3", date, 28000, "3 year", busymode, "Omsk", company, admin);
+        Vacancy vacancy2 = new Vacancy(2, "title2", "descr2", date, 25000, "2 years", busymode, "Omsk", company, admin);
+        Vacancy vacancy3 = new Vacancy(3, "title3", "descr3", date, 28000, "3 years", busymode, "Omsk", company, admin);
 
         List<Vacancy> vacancySet = new ArrayList<>();
         vacancySet.add(vacancy1);
