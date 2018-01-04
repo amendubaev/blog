@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+    
+<mapper namespace="vacancy">
+    <resultMap id="vacancyResult" type ="model.Vacancy">
+        <result property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="description" column="description" />
+        <result property="date" column="date" />
+        <result property="salary" column="salary" />
+        <result property="experience" column="experience" />
+        <result property="busymode" column="busymode" />
+        <result property="location" column="location" />
+        <result property="company" column="company" />
+        <result property="admin" column="admin" />
+        <result property="category" column="category" />
+    </resultMap>  
+  
+    <select id="selectById" parameterType="int" resultMap="vacancyResult">  
+        select * from vacancy where id = #{id}
+    </select>
+    
+    <select id="selectAll" resultMap="vacancyResult">  
+        select * from vacancy 
+    </select>
+    
+    <delete id = "delete" parameterType = "model.Vacancy"> 
+        DELETE from vacancy WHERE id = #{id}; 
+    </delete> 
+
+    <insert id = "insert" parameterType = "model.Vacancy"> 
+        INSERT INTO vacancy (id, name, description, date, salary, experience, busymode, location, company, admin, category) 
+        VALUES (#{id},#{name},#{description},#{date},#{salary},#{experience},#{busymode},#{location},#{company},#{admin},#{category});     
+    </insert> 
+
+    <update id = "update" parameterType = "model.Vacancy"> 
+        UPDATE vacancy SET 
+        name = #{name}, 
+        description = #{description} ,
+        date = #{date} ,
+        salary = #{salary} ,
+        experience = #{experience} ,
+        busymode = #{busymode} ,
+        location = #{location} ,
+        company = #{company} ,
+        admin = #{admin} ,
+        category = #{category} ,
+        WHERE ID = #{id}; 
+    </update>    
+</mapper>

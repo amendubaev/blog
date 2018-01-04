@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+    
+<mapper namespace="admin">
+    <resultMap id="adminResult" type ="model.Admin">
+        <result property="id" column="id" />
+        <result property="login" column="login" />
+        <result property="password" column="password" />
+    </resultMap>  
+  
+    <select id="selectById" parameterType="int" resultMap="adminResult">  
+        select * from admin where ID = #{id}
+    </select>
+    
+    <select id="selectAll" resultMap="adminResult">  
+        select * from admin 
+    </select>
+    
+    <delete id = "delete" parameterType = "model.Admin"> 
+        DELETE from admin WHERE ID = #{id}; 
+    </delete> 
+
+    <insert id = "insert" parameterType = "model.Admin"> 
+        INSERT INTO admin (login, password) 
+        VALUES ( #{login}, #{password});     
+    </insert> 
+
+    <update id = "update" parameterType = "model.Admin"> 
+        UPDATE admin SET 
+        login= #{login}, 
+        password = #{password} 
+        WHERE ID = #{id}; 
+    </update>    
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper 
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+    
+<mapper namespace="busymode">
+    <resultMap id="busymodeResult" type ="model.BusyMode">
+        <result property="id" column="id" />
+        <result property="name" column="name" />
+        <collection property="vacancy" javaType="List" ofType="model.Vacancy" column="id"  select="selectVacancy"/>
+    </resultMap>  
+    
+    <select id="selectVacancy" parameterType="int" resultMap="vacancy.vacancyResult">  
+        select * from vacancy where id_busymode = #{id}
+    </select>
+
+    <select id="selectById" parameterType="int" resultMap="busymodeResult">  
+        select * from busymode where id = #{id}
+    </select>
+    
+    <select id="selectAll" resultMap="busymodeResult">  
+        select * from busymode 
+    </select>
+    
+    <delete id = "delete" parameterType = "model.BusyMode"> 
+        DELETE from busymode WHERE id = #{id}; 
+    </delete> 
+
+    <insert id = "insert" parameterType = "model.BusyMode"> 
+        INSERT INTO busymode (id, name) 
+        VALUES (#{id}, #{ name});     
+    </insert> 
+
+    <update id = "update" parameterType = "model.BusyMode"> 
+        UPDATE busymode SET 
+        name= #{name} 
+        WHERE ID = #{id}; 
+    </update>    
+</mapper>
