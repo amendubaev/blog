@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Dropbox/highschool/UprProg/blog/headhunter/src/java/model/BusyMode.java</file>
+            <file>file:/D:/Dropbox/highschool/UprProg/blog/headhunter/src/java/mybatis/vacancy.xml</file>
             <file>file:/D:/Dropbox/highschool/UprProg/blog/headhunter/src/java/model/Company.java</file>
+            <file>file:/D:/Dropbox/highschool/UprProg/blog/headhunter/test/model/CompanyTest.java</file>
             <file>file:/D:/Dropbox/highschool/UprProg/blog/headhunter/src/java/model/Vacancy.java</file>
-            <file>file:/D:/Dropbox/highschool/UprProg/blog/headhunter/src/java/model/Category.java</file>
             <file>file:/D:/Dropbox/highschool/UprProg/blog/headhunter/test/model/AdminTest.java</file>
             <file>file:/D:/Dropbox/highschool/UprProg/blog/headhunter/test/model/CategoryTest.java</file>
         </group>

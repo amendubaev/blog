@@ -1,14 +1,50 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package DAL;
 
-/**
- *
- * @author Gerune
- */
-public class CompanyDAL {
-    
+import java.util.List;
+import model.Company;
+import org.apache.ibatis.session.SqlSession;
+
+public class CompanyDAL extends BaseDAL {
+
+    public CompanyDAL() {
+        super();
+    }
+
+    public List<Company> selectAll() {
+        SqlSession session = sqlSessionFactory.openSession();
+        List<Company> companyes = session.selectList("company.selectAll");
+        session.close();
+        return companyes;
+    }
+
+    public Company selectById(int id) {
+        SqlSession session = sqlSessionFactory.openSession();
+        Company company = session.selectOne("company.selectById", id);
+        session.close();
+        return company;
+    }
+
+    public int insert(Company company) {
+        SqlSession session = sqlSessionFactory.openSession();
+        int count = session.insert("company.insert", company);
+        session.commit();
+        session.close();
+        return count;
+    }
+
+    public int update(Company company) {
+        SqlSession session = sqlSessionFactory.openSession();
+        int count = session.update("company.update", company);
+        session.commit();
+        session.close();
+        return count;
+    }
+
+    public int delete(Company company) {
+        SqlSession session = sqlSessionFactory.openSession();
+        int count = session.delete("company.delete", company);
+        session.commit();
+        session.close();
+        return count;
+    }
 }

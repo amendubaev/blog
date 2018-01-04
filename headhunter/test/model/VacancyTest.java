@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 import java.util.Date;
@@ -15,27 +10,23 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- *
- * @author jocde
- */
 public class VacancyTest {
-        
+
     public VacancyTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -48,9 +39,9 @@ public class VacancyTest {
         Date date = new Date(2018, 01, 03);
         Admin admin = new Admin(1, "login", "password");
         Category category = new Category(1, "name");
-                
-        Vacancy vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
-      
+
+        Vacancy vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
+
         assertEquals(vacancy.getId(), 1);
         assertEquals(vacancy.getName(), "teacher");
         assertEquals(vacancy.getDescription(), "description");
@@ -63,8 +54,7 @@ public class VacancyTest {
         assertEquals(vacancy.getAdmin(), admin);
         assertEquals(vacancy.getCategory(), category);
     }
-    
-   
+
     @Test
     public void testEquals() {
         BusyMode busymode = new BusyMode(1, "Full time");
@@ -77,64 +67,64 @@ public class VacancyTest {
         Admin admin2 = new Admin(2, "name", "password");
         Category category = new Category(1, "name");
         Category category2 = new Category(2, "category");
-        
+
         System.out.println("equals");
-        
-        Vacancy vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
-        Vacancy vacancy2 = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
+
+        Vacancy vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
+        Vacancy vacancy2 = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
 
         assertTrue(vacancy.equals(vacancy2));
-        
-        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
-        vacancy2 = new Vacancy(2, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
-        
-        assertFalse(vacancy.equals(vacancy2));
-                
-        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
-        vacancy2 = new Vacancy(2, "doctor", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
-        
-        assertFalse(vacancy.equals(vacancy2));
-        
-        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
-        vacancy2 = new Vacancy(1, "doctor", "desc", date2, 50000, "2 year", busymode2, "Moscow", company2, admin2, category2 );        
-        
-        assertFalse(vacancy.equals(vacancy2));
-        
-        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
-        vacancy2 = new Vacancy(1, "doctor", "desc", date, 50000, "1 year", busymode, "Omsk", company, admin, category );
+
+        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
+        vacancy2 = new Vacancy(2, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
 
         assertFalse(vacancy.equals(vacancy2));
-                
-        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
-        vacancy2 = new Vacancy(1, "doctor", "desc", date2, 50000, "1 year", busymode, "Omsk", company, admin, category );
-        
-        assertFalse(vacancy.equals(vacancy2));
-                
-        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
-        vacancy2 = new Vacancy(2, "doctor", "desc", date, 20000, "1 year", busymode2, "Omsk", company, admin, category );
-        
-        assertFalse(vacancy.equals(vacancy2));
-        
-        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
-        vacancy2 = new Vacancy(2, "teacher", "description", date, 20000, "1 year", busymode, "Moscow", company, admin, category );
-        
+
+        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
+        vacancy2 = new Vacancy(2, "doctor", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
+
         assertFalse(vacancy.equals(vacancy2));
 
-        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
-        vacancy2 = new Vacancy(2, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company2, admin, category );
-        
+        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
+        vacancy2 = new Vacancy(1, "doctor", "desc", date2, 50000, "2 year", busymode2, "Moscow", company2, admin2, category2);
+
         assertFalse(vacancy.equals(vacancy2));
-        
-        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
-        vacancy2 = new Vacancy(2, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin2, category );
-        
+
+        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
+        vacancy2 = new Vacancy(1, "doctor", "desc", date, 50000, "1 year", busymode, "Omsk", company, admin, category);
+
         assertFalse(vacancy.equals(vacancy2));
-        
-        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
-        vacancy2 = new Vacancy(2, "teacher", "description", date, 550000, "1 year", busymode, "Omsk", company, admin, category2 );
-        
+
+        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
+        vacancy2 = new Vacancy(1, "doctor", "desc", date2, 50000, "1 year", busymode, "Omsk", company, admin, category);
+
         assertFalse(vacancy.equals(vacancy2));
-        
+
+        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
+        vacancy2 = new Vacancy(2, "doctor", "desc", date, 20000, "1 year", busymode2, "Omsk", company, admin, category);
+
+        assertFalse(vacancy.equals(vacancy2));
+
+        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
+        vacancy2 = new Vacancy(2, "teacher", "description", date, 20000, "1 year", busymode, "Moscow", company, admin, category);
+
+        assertFalse(vacancy.equals(vacancy2));
+
+        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
+        vacancy2 = new Vacancy(2, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company2, admin, category);
+
+        assertFalse(vacancy.equals(vacancy2));
+
+        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
+        vacancy2 = new Vacancy(2, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin2, category);
+
+        assertFalse(vacancy.equals(vacancy2));
+
+        vacancy = new Vacancy(1, "teacher", "description", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
+        vacancy2 = new Vacancy(2, "teacher", "description", date, 550000, "1 year", busymode, "Omsk", company, admin, category2);
+
+        assertFalse(vacancy.equals(vacancy2));
+
     }
 
 }

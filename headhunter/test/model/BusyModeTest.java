@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 import org.junit.After;
@@ -14,12 +9,8 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- *
- * @author Gerune
- */
 public class BusyModeTest {
-    
+
     public BusyModeTest() {
     }
 
@@ -68,19 +59,19 @@ public class BusyModeTest {
         BusyMode busymode1 = new BusyMode(1, "full_time");
         BusyMode busymode2 = new BusyMode(1, "full_time");
         assertTrue(busymode1.equals(busymode2));
-    
+
         busymode1 = new BusyMode(1, "full_time");
         busymode2 = new BusyMode(2, "full_time");
         assertFalse(busymode1.equals(busymode2));
-  
+
         busymode1 = new BusyMode(1, "full_time");
         busymode2 = new BusyMode(1, "underemployment");
         assertFalse(busymode1.equals(busymode2));
-        
+
         busymode1 = new BusyMode(1, "student");
         busymode2 = new BusyMode(2, "night");
         assertFalse(busymode1.equals(busymode2));
-        
+
     }
-    
+
 }
