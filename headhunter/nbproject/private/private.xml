@@ -4,7 +4,16 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/Programming/RGR/headhunter/test/DAL/AdminDALTest.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/mappers/JsonBusyMode.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/CompanyDAL.java</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/AdminDAL.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/VacancyDAL.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/vacancy.xml</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/config.properties</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/controllers/BusyModeController.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/BaseDAL.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/mappers/JsonAdmin.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/controllers/AdminController.java</file>
         </group>
     </open-files>
 </project-private>
