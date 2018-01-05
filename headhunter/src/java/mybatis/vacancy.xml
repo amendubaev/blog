@@ -11,11 +11,7 @@
         <result property="date" column="date" />
         <result property="salary" column="salary" />
         <result property="experience" column="experience" />
-        <result property="busymode" column="busymode" />
         <result property="location" column="location" />
-        <result property="company" column="company" />
-        <result property="admin" column="admin" />
-        <result property="category" column="category" />
     </resultMap>  
   
     <select id="selectById" parameterType="int" resultMap="vacancyResult">  
@@ -31,8 +27,8 @@
     </delete> 
 
     <insert id = "insert" parameterType = "model.Vacancy"> 
-        INSERT INTO vacancy (id, name, description, date, salary, experience, busymode, location, company, admin, category) 
-        VALUES (#{id},#{name},#{description},#{date},#{salary},#{experience},#{busymode},#{location},#{company},#{admin},#{category});     
+        INSERT INTO vacancy (id, name, description, date, salary, experience, location) 
+        VALUES (#{id},#{name},#{description},#{date},#{salary},#{experience},#{location});     
     </insert> 
 
     <update id = "update" parameterType = "model.Vacancy"> 
@@ -42,11 +38,7 @@
         date = #{date} ,
         salary = #{salary} ,
         experience = #{experience} ,
-        busymode = #{busymode} ,
         location = #{location} ,
-        company = #{company} ,
-        admin = #{admin} ,
-        category = #{category} ,
         WHERE ID = #{id}; 
     </update>    
 </mapper>
