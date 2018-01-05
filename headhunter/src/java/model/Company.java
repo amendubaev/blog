@@ -9,9 +9,9 @@ public class Company {
     private String name;
     private String description;
     private String phone;
-    private Image image;
+    private byte[] image;
 
-    public Company(int id, String name, String description, String phone, Image image) {
+    public Company(int id, String name, String description, String phone, byte[] image) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -35,7 +35,7 @@ public class Company {
         return phone;
     }
 
-    public Image getImage() {
+    public byte[] getImage() {
         return image;
     }
 
@@ -55,7 +55,7 @@ public class Company {
         this.phone = phone;
     }
 
-    public void setImage(Image image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 
