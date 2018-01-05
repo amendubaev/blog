@@ -8,8 +8,8 @@
         <id property="id" column="id" />
         <result property="login" column="login" />
         <result property="password" column="password" />
-    </resultMap>  
-  
+    </resultMap> 
+
     <select id="selectById" parameterType="int" resultMap="adminResult">  
         select * from admin where ID = #{id}
     </select>

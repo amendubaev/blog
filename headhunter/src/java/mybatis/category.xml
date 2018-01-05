@@ -5,12 +5,12 @@
     
 <mapper namespace="category">
     <resultMap id="categoryResult" type ="model.Category">
-        <result property="id" column="id" />
+        <id property="id" column="id" />
         <result property="name" column="name" />
-        <collection property="vacancy" javaType="List" ofType="model.Vacancy" column="id"  select="selectVacancy"/>
+        <collection property="vacancy" javaType="List" ofType="model.Vacancy" column="id"  select="selectVacancyForCategory"/>
     </resultMap>  
     
-    <select id="selectVacancy" parameterType="int" resultMap="vacancy.vacancyResult">  
+    <select id="selectVacancyForCategory" parameterType="int" resultMap="vacancy.vacancyResult">  
         select * from vacancy where id_category = #{id}
     </select>
 
