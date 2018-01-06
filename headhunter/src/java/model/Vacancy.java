@@ -1,6 +1,8 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 public class Vacancy {
@@ -16,8 +18,13 @@ public class Vacancy {
     private Company company;
     private Admin admin;
     private Category category;
+    private List<BusyMode> busymodeList;
+    private List<Company> companyList;
+    private List<Category> categoryList;
+    private List<Admin> adminList;
 
-    public Vacancy() {
+    public Vacancy(int id, String name, String description, Date date, int salary, String experience, List<BusyMode> busymodeList, String location) {
+        this.busymodeList = new ArrayList<>();  
     }
 
     public Vacancy(int id, String name, String description, Date date, int salary, String experience, BusyMode busymode, String location,
@@ -34,7 +41,7 @@ public class Vacancy {
         this.admin = admin;
         this.category = category;
     }
-
+    
     public int getId() {
         return id;
     }

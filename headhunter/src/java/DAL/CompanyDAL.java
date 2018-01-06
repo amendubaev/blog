@@ -2,6 +2,7 @@ package DAL;
 
 import java.util.List;
 import model.Company;
+import model.Vacancy;
 import org.apache.ibatis.session.SqlSession;
 
 public class CompanyDAL extends BaseDAL {
@@ -10,6 +11,13 @@ public class CompanyDAL extends BaseDAL {
         super();
     }
 
+    public List<Vacancy> selectVacancyForCompany(){
+        SqlSession session = sqlSessionFactory.openSession();
+        List<Vacancy> vacancys = session.selectList("company.selectVacancyForCompany");
+        session.close();
+        return vacancys;
+    }
+    
     public List<Company> selectAll() {
         SqlSession session = sqlSessionFactory.openSession();
         List<Company> companyes = session.selectList("company.selectAll");

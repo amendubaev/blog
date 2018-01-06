@@ -40,7 +40,7 @@ public class CompanyTest {
         assertEquals(company.getName(), "OMGTU");
         assertEquals(company.getDescription(), "description");
         assertEquals(company.getPhone(), "89001231242");
-        assertEquals(company.getImage(), null);
+        assertEquals(company.getLogo(), null);
     }
 
     @Test

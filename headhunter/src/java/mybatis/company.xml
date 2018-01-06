@@ -9,7 +9,7 @@
         <result property="name" column="name" />
         <result property="description" column="description" />
         <result property="phone" column="phone" />
-        <result property="image" column="image" />
+        <result property="logo" column="logo" />
         <collection property="vacancy" javaType="List" ofType="model.Vacancy" column="id"  select="selectVacancyForCompany"/>
     </resultMap>  
     
@@ -30,8 +30,8 @@
     </delete> 
 
     <insert id = "insert" parameterType = "model.Company"> 
-        INSERT INTO company (id, name, description, phone, image) 
-        VALUES (#{id}, #{name,}, #{description,},#{phone,},#{image});     
+        INSERT INTO company (id, name, description, phone, logo) 
+        VALUES (#{id}, #{name,}, #{description,},#{phone,},#{logo});     
     </insert>
 
     <update id = "update" parameterType = "model.Company"> 
@@ -39,7 +39,7 @@
         name= #{name}, 
         description = #{description},
         phone = #{phone},
-        image = #{image},
+        logo = #{logo},
         WHERE ID = #{id}; 
     </update>    
 </mapper>

@@ -3,6 +3,7 @@ package DAL;
 
 import java.util.List;
 import model.BusyMode;
+import model.Vacancy;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
@@ -11,6 +12,14 @@ import org.junit.Test;
 public class BusyModeDALTest {
     
     public BusyModeDALTest() {
+    }
+    
+    @Test
+    public void testSelectVacancyForBM() {
+        System.out.println("BusyModeDal selectVacancyForBM");
+        BusyModeDAL instance = new BusyModeDAL();
+        List<Vacancy> result = instance.selectVacancyForBM();
+        assertTrue(result != null);
     }
 
     @Test

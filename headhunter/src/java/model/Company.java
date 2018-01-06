@@ -1,6 +1,8 @@
 package model;
 
 import java.awt.Image;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Company {
@@ -9,14 +11,31 @@ public class Company {
     private String name;
     private String description;
     private String phone;
-    private byte[] image;
+    private byte[] logo;
+    private List<Vacancy> vacancy;
 
-    public Company(int id, String name, String description, String phone, byte[] image) {
+    public Company() {
+        this.vacancy = new ArrayList<>();
+    }
+
+    public Company(int id, String name) {
+        this.id = id;
+        this.name = name;
+        this.vacancy = new ArrayList<>();
+    }
+
+    public Company(int id, String name, List<Vacancy> vacancy) {
+        this.id = id;
+        this.name = name;
+        this.vacancy = vacancy;
+    }
+
+    public Company(int id, String name, String description, String phone, byte[] logo) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.phone = phone;
-        this.image = image;
+        this.logo = logo;
     }
 
     public int getId() {
@@ -35,8 +54,8 @@ public class Company {
         return phone;
     }
 
-    public byte[] getImage() {
-        return image;
+    public byte[] getLogo() {
+        return logo;
     }
 
     public void setId(int id) {
@@ -55,8 +74,8 @@ public class Company {
         this.phone = phone;
     }
 
-    public void setImage(byte[] image) {
-        this.image = image;
+    public void setLogo(byte[] logo) {
+        this.logo = logo;
     }
 
     @Override
@@ -83,7 +102,7 @@ public class Company {
         if (!Objects.equals(this.phone, other.phone)) {
             return false;
         }
-        if (!Objects.equals(this.image, other.image)) {
+        if (!Objects.equals(this.logo, other.logo)) {
             return false;
         }
         return true;
@@ -101,7 +120,7 @@ public class Company {
 
     @Override
     public String toString() {
-        return "Company{" + "id=" + id + ", name=" + name + ", description=" + description + ", phone=" + phone + ", image=" + image + '}';
+        return "Company{" + "id=" + id + ", name=" + name + ", description=" + description + ", phone=" + phone + ", logo=" + logo + '}';
     }
 
 }

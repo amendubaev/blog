@@ -2,12 +2,20 @@ package DAL;
 
 import java.util.List;
 import model.Category;
+import model.Vacancy;
 import org.apache.ibatis.session.SqlSession;
 
 public class CategoryDAL extends BaseDAL {
 
     public CategoryDAL() {
         super();
+    }
+    
+    public List<Vacancy> selectVacancyForCategory(){
+        SqlSession session = sqlSessionFactory.openSession();
+        List<Vacancy> vacancys = session.selectList("busymode.selectVacancyForCategory");
+        session.close();
+        return vacancys;
     }
 
     public List<Category> selectAll() {
