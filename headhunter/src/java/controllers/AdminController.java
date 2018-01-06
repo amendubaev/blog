@@ -39,7 +39,7 @@ public class AdminController {
         return adminDal.update(admin);
     }
     
-     public int delelteAdmin(Admin admin)
+     public int deleteAdmin(Admin admin)
     {
         return adminDal.delete(admin);
     }
