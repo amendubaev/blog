@@ -3,16 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Programming/RGR/headhunter/test/DAL/AdminDALTest.java</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/BusyModeDAL.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/AdminDAL.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/test/model/VacancyTest.java</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/busymode.xml</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/config.xml</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/vacancy.xml</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/VacancyDAL.java</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/config.properties</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/admin.xml</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/category.xml</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/mappers/JsonAdmin.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/model/Category.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/test/DAL/AdminDALTest.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/model/Company.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/CompanyDAL.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/AdminDAL.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/CategoryDAL.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/config.xml</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/vacancy.xml</file>
+            <file>file:/E:/Programming/RGR/headhunter/test/DAL/CompanyDALTest.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/model/BusyMode.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/model/Admin.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/test/model/CompanyTest.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/category.xml</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/model/Vacancy.java</file>
             <file>file:/E:/Programming/RGR/headhunter/test/DAL/BusyModeDALTest.java</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/company.xml</file>
         </group>

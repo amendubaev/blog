@@ -14,19 +14,19 @@
     </resultMap>  
     
     <select id="selectVacancyForCompany" parameterType="int" resultMap="vacancy.vacancyResult">  
-        select * from vacancy where id_company = #{id}
+        SELECT * FROM vacancy WHERE id_company = #{id}
     </select>
   
     <select id="selectById" parameterType="int" resultMap="companyResult">  
-        select * from company where id = #{id}
+        SELECT * FROM company WHERE id = #{id}
     </select>
     
     <select id="selectAll" resultMap="companyResult">  
-        select * from company 
+        SELECT * FROM company 
     </select>
     
     <delete id = "delete" parameterType = "model.Company"> 
-        DELETE from company WHERE id = #{id}; 
+        DELETE FROM company WHERE id = #{id}; 
     </delete> 
 
     <insert id = "insert" parameterType = "model.Company"> 

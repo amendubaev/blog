@@ -9,7 +9,7 @@ public class BusyMode {
     private int id;
     private String name;
     private List<Vacancy> vacancy;
-
+    
     public BusyMode() {
         this.vacancy = new ArrayList<>();
     }
