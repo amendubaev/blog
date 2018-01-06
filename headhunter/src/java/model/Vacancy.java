@@ -18,6 +18,9 @@ public class Vacancy {
     private Company company;
     private Admin admin;
     private Category category;
+    
+    public Vacancy(){
+    }
 
     public Vacancy(int id, String name, String description, Date date, int salary, String experience, BusyMode busymode, String location,
             Company company, Admin admin, Category category) {

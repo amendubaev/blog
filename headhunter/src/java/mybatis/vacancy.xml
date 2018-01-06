@@ -66,20 +66,20 @@
         INSERT INTO vacancy (id, name, description, date, salary, experience, location, id_busymode, id_company, id_category, id_admin) 
         VALUES (#{id},#{name},#{description},#{date},#{salary},#{experience},#{location},#{id_busymode},#{id_company},#{id_category},#{id_admin)};     
     </insert> 
-<!--
-    <update id = "update" parameterType = "model.vacancy"> 
+
+    <update id = "update" parameterType = "model.Vacancy"> 
         UPDATE vacancy SET 
         name = #{name}, 
-        description = #{description} ,
-        date = #{date} ,
-        salary = #{salary} ,
-        experience = #{experience} ,
-        location = #{location} ,
-        id_busymode = #{busymode.id} ,
-        id_company = #{company.id} ,
-        id_category = #{category.id} ,
-        id_admin = #{admin.id) ,
-        WHERE ID = #{id}; 
-    </update>
-    -->    
-</mapper>
+        description = #{description},
+        date = #{date},
+        salary = #{salary},
+        experience = #{experience},
+        location = #{location},
+        id_company = #{id_company},  
+        id_category = #{id_category},
+        id_busymode = #{id_busymode},
+        id_admin = #{id_admin)
+        WHERE id = #{id}; 
+    </update>   
+
+    </mapper>

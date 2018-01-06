@@ -7,7 +7,7 @@
     <resultMap id="busymodeResult" type ="model.BusyMode">
         <id property="id" column="id" />
         <result property="name" column="name" />
-        <collection property="vacancy" javaType="List" ofType="model.Vacancy" column="id"  select="selectVacancyForBM"/>
+        <collection property="vacancy" javaType="List" ofType="model.Vacancy" column="id"/>
     </resultMap>  
     
     <select id="selectVacancyForBM" parameterType="int" resultMap="vacancy.vacancyResult">  

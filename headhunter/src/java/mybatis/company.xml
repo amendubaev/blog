@@ -10,7 +10,7 @@
         <result property="description" column="description" />
         <result property="phone" column="phone" />
         <result property="logo" column="logo" />
-        <collection property="vacancy" javaType="List" ofType="model.Vacancy" column="id"  select="selectVacancyForCompany"/>
+        <collection property="vacancy" javaType="List" ofType="model.Vacancy" column="id"/>
     </resultMap>  
     
     <select id="selectVacancyForCompany" parameterType="int" resultMap="vacancy.vacancyResult">  
@@ -39,7 +39,7 @@
         name= #{name}, 
         description = #{description},
         phone = #{phone},
-        logo = #{logo},
+        logo = #{logo}
         WHERE ID = #{id}; 
     </update>    
 </mapper>
