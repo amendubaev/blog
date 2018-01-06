@@ -15,7 +15,7 @@ import model.Vacancy;
  * @author greypk
  */
 public class BusyModeController {
-     protected BusyModeDAL busymodeDal ;
+    protected BusyModeDAL busymodeDal ;
     public BusyModeController() {
         busymodeDal =  new BusyModeDAL();
     }
