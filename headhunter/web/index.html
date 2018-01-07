@@ -12,13 +12,13 @@
         <script src="service/VacancyService.js"></script>
         <script src="controllers/VacancyController.js"></script>
         <script>
-            function categoryClicked(id)
-            {
+            function categoryClicked(id) {
+                oneTime = true;
                 var vacancyController = new VacancyController();
-                vacancyController.getAllVacancyByIdCategoryView(id);
+                vacancyController.getAllVacancyByIdCategoryView(id, oneTime);
             }
-            function vacancyClicked(id)
-            {
+            
+            function vacancyClicked(id) {
                 document.location.href = "/headhunter/view/newspage.html?id=" + id;
             }
         </script>
@@ -66,9 +66,11 @@
             $(window).load(function () {
                 var categoryController = new CategoryController();
                 var vacancyController = new VacancyController();
-
-                categoryController.getAllCategoryViewListGroup();
-                vacancyController.getAllVacancyByIdCategoryView(1);
+                var categoryCount = categoryController.getAllCategoryViewListGroup();
+                
+                for (var i = 1; i <= categoryCount; i++) {
+                    vacancyController.getAllVacancyByIdCategoryView(i);
+                }
             });
         </script>
 

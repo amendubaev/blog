@@ -1,45 +1,40 @@
 class VacancyService
 {
-    
-    getAllVacancyByCategoryId(id)
-    {
+
+    getAllVacancyByCategoryId(id) {
         var request = new XMLHttpRequest();
-        request.open('GET', '/headhunter/GetCategoryById?id='+id, false);
+        request.open('GET', '/headhunter/GetCategoryById?id=' + id, false);
         request.send();
-        if (request.status === 200) 
+        if (request.status === 200)
         {
-           var category= JSON.parse(request.responseText);
-           return category.vacancy;
+            var category = JSON.parse(request.responseText);
+            return category.vacancy;
         }
         return null;
     }
-    
-    getVacancyById(id)
-    {
+
+    getVacancyById(id) {
         var request = new XMLHttpRequest();
-        request.open('GET', '/headhunter/GetVacancyById?id='+id, false);
+        request.open('GET', '/headhunter/GetVacancyById?id=' + id, false);
         request.send();
-        if (request.status === 200) 
+        if (request.status === 200)
         {
-           var vacancy= JSON.parse(request.responseText);
-           return vacancy;
+            var vacancy = JSON.parse(request.responseText);
+            return vacancy;
         }
         return null;
     }
-    
-    insertCategory()
-    {
-        
+
+    insertCategory() {
+
     }
-    
-    updateCategory()
-    {
-        
+
+    updateCategory() {
+
     }
-    
-    deleteCategory()
-    {
-        
+
+    deleteCategory() {
+
     }
 }
 
