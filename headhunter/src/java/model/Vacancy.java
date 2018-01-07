@@ -18,10 +18,14 @@ public class Vacancy {
     private Company company;
     private Admin admin;
     private Category category;
+    private int busymodeID;
+    private int companyID;
+    private int categoryID;
+    private int adminID;
     
     public Vacancy(){
     }
-
+    
     public Vacancy(int id, String name, String description, Date date, int salary, String experience,  String location, BusyMode busymode,
             Company company, Category category, Admin admin) {
         this.id = id;
@@ -35,6 +39,21 @@ public class Vacancy {
         this.company = company;
         this.admin = admin;
         this.category = category;
+    }
+    
+    public Vacancy(int id, String name, String description, Date date, int salary, String experience,  String location, int busymodeID,
+            int companyID, int categoryID, int adminID) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.date = date;
+        this.salary = salary;
+        this.experience = experience;
+        this.busymodeID = busymodeID;
+        this.location = location;
+        this.companyID = companyID;
+        this.adminID = adminID;
+        this.categoryID = categoryID;
     }
     
     public int getId() {

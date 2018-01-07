@@ -42,7 +42,7 @@ public class VacancyDALTest {
         Category category = new Category(100, "Category");
         BusyMode busymode = new BusyMode(100, "BusyMode");
         Admin admin = new Admin(100, "user", "password");
-        Vacancy vacancy = new Vacancy(100, "Name","Description",date,10000,"experience","Omsk", busymode, company, category, admin);
+        Vacancy vacancy = new Vacancy(100, "Name","Description",date,10000,"experience","Omsk", 1, 1, 1, 1);
         VacancyDAL instance = new VacancyDAL();
         int expResult = 1;
         int result = instance.insert(vacancy);
