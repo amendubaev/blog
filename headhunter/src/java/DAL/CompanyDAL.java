@@ -11,9 +11,9 @@ public class CompanyDAL extends BaseDAL {
         super();
     }
 
-    public List<Vacancy> selectVacancyForCompany(){
+    public List<Vacancy> selectVacancyForCompany(int id){
         SqlSession session = sqlSessionFactory.openSession();
-        List<Vacancy> vacancys = session.selectList("company.selectVacancyForCompany");
+        List<Vacancy> vacancys = session.selectList("company.selectVacancyForCompany", id);
         session.close();
         return vacancys;
     }

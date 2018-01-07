@@ -20,31 +20,31 @@ public class BusyModeController {
         busymodeDal =  new BusyModeDAL();
     }
     
-    public List<Vacancy> selectVacancyForBM()
+    public List<Vacancy> selectVacancyForBM(int id)
     {
-        return busymodeDal.selectVacancyForBM();
+        return busymodeDal.selectVacancyForBM(id);
     }
 
-    public List<BusyMode> selectAll()
+    public List<BusyMode> getAllBusyMode()
     {
         return busymodeDal.selectAll();
     }
     
-    public BusyMode selectById(int id)
+    public BusyMode getBusyModeById(int id)
     {
         return busymodeDal.selectById(id);
     }
     
-    public int insert(BusyMode busymode)
+    public int insertBusyMode(BusyMode busymode)
     {
         return busymodeDal.insert(busymode);
     }
-    public int update(BusyMode busymode)
+    public int updateBusyMode(BusyMode busymode)
     {
         return busymodeDal.update(busymode);
     }
     
-     public int delete(BusyMode busymode)
+     public int deleteBusyMode(BusyMode busymode)
     {
         return busymodeDal.delete(busymode);
     }

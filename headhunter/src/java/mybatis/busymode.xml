@@ -11,19 +11,19 @@
     </resultMap>  
     
     <select id="selectVacancyForBM" parameterType="int" resultMap="vacancy.vacancyResult">  
-        select * from vacancy where id_busymode = #{id}
+        SELECT * FROM vacancy WHERE id_busymode = #{id}
     </select>
 
     <select id="selectById" parameterType="int" resultMap="busymodeResult">  
-        select * from busymode where id = #{id}
+        SELECT * FROM busymode WHERE id = #{id}
     </select>
     
     <select id="selectAll" resultMap="busymodeResult">  
-        select * from busymode 
+        SELECT * FROM busymode 
     </select>
     
     <delete id = "delete" parameterType = "model.BusyMode"> 
-        DELETE from busymode WHERE id = #{id}; 
+        DELETE FROM busymode WHERE id = #{id}; 
     </delete> 
 
     <insert id = "insert" parameterType = "model.BusyMode"> 
@@ -34,6 +34,6 @@
     <update id = "update" parameterType = "model.BusyMode"> 
         UPDATE busymode SET 
         name= #{name} 
-        WHERE ID = #{id}; 
+        WHERE id = #{id}; 
     </update>    
 </mapper>

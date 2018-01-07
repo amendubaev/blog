@@ -12,14 +12,6 @@ public class CompanyDALTest {
     
     public CompanyDALTest() {
     }
-
-    @Test
-    public void testSelectVacancyForCompany() {
-        System.out.println("CompanyDal selectVacancyForCompany");
-        CompanyDAL instance = new CompanyDAL();
-        List<Vacancy> result = instance.selectVacancyForCompany();
-        assertTrue(result != null);
-    }
     
     @Test
     public void testSelectAll() {
@@ -47,6 +39,15 @@ public class CompanyDALTest {
         int result = instance.insert(company);
         assertEquals(expResult, result);
     }
+    
+    @Test
+    public void testSelectVacancyForCompany() {
+        System.out.println("CompanyDal selectVacancyForCompany");
+        CompanyDAL instance = new CompanyDAL();
+        List<Vacancy> result = instance.selectVacancyForCompany(100);
+        assertTrue(result != null);
+    }
+    
 
     @Test
     public void testUpdate() {

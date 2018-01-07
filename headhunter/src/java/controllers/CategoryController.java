@@ -19,31 +19,31 @@ public class CategoryController {
         categoryDal =  new CategoryDAL();
     }
     
-    public List<Category> selectAll()
+    public List<Category> getAllCategory()
     {
         return categoryDal.selectAll();
     }
 
-    public List<Vacancy> selectVacancyForCategory()
+    public List<Vacancy> selectVacancyForCategory(int id)
     {
-        return categoryDal.selectVacancyForCategory();
+        return categoryDal.selectVacancyForCategory(id);
     }
     
-    public Category selectById(int id)
+    public Category getCategoryById(int id)
     {
         return categoryDal.selectById(id);
     }
     
-    public int insert(Category category)
+    public int insertCategory(Category category)
     {
         return categoryDal.insert(category);
     }
-    public int update(Category category)
+    public int updateCategory(Category category)
     {
         return categoryDal.update(category);
     }
     
-     public int delete(Category category)
+     public int deleteCategory(Category category)
     {
         return categoryDal.delete(category);
     }

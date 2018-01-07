@@ -13,14 +13,6 @@ public class BusyModeDALTest {
     
     public BusyModeDALTest() {
     }
-    
-    @Test
-    public void testSelectVacancyForBM() {
-        System.out.println("BusyModeDal selectVacancyForBM");
-        BusyModeDAL instance = new BusyModeDAL();
-        List<Vacancy> result = instance.selectVacancyForBM();
-        assertTrue(result != null);
-    }
 
     @Test
     public void testSelectAll() {
@@ -36,6 +28,14 @@ public class BusyModeDALTest {
         int id = 1;
         BusyModeDAL instance = new BusyModeDAL();
         BusyMode result = instance.selectById(id);
+        assertTrue(result != null);
+    }
+    
+    @Test
+    public void testSelectVacancyForBM() {
+        System.out.println("BusyModeDal selectVacancyForBM");
+        BusyModeDAL instance = new BusyModeDAL();
+        List<Vacancy> result = instance.selectVacancyForBM(1);
         assertTrue(result != null);
     }
     

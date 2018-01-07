@@ -22,9 +22,9 @@ public class CompanyController {
         companyDal =  new CompanyDAL();
     }
     
-    public List<Vacancy> selectVacancyForCompany()
+    public List<Vacancy> selectVacancyForCompany(int id)
     {
-        return companyDal.selectVacancyForCompany();
+        return companyDal.selectVacancyForCompany(id);
     }
 
     public List<Company> selectAll()

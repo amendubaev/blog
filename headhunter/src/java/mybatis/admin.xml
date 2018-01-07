@@ -11,15 +11,15 @@
     </resultMap> 
 
     <select id="selectById" parameterType="int" resultMap="adminResult">  
-        select * from admin where ID = #{id}
+        SELECT * FROM admin WHERE ID = #{id}
     </select>
     
     <select id="selectAll" resultMap="adminResult">  
-        select * from admin 
+        SELECT * FROM admin 
     </select>
     
     <delete id = "delete" parameterType = "model.Admin"> 
-        DELETE from admin WHERE ID = #{id}; 
+        DELETE FROM admin WHERE ID = #{id}; 
     </delete> 
 
     <insert id = "insert" parameterType = "model.Admin"> 

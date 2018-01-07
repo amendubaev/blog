@@ -11,9 +11,9 @@ public class BusyModeDAL extends BaseDAL {
         super();
     }
     
-    public List<Vacancy> selectVacancyForBM(){
+    public List<Vacancy> selectVacancyForBM(int id){
         SqlSession session = sqlSessionFactory.openSession();
-        List<Vacancy> vacancys = session.selectList("busymode.selectVacancyForBM");
+        List<Vacancy> vacancys = session.selectList("busymode.selectVacancyForBM", id);
         session.close();
         return vacancys;
     }
