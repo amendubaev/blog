@@ -44,9 +44,9 @@ public class CategoryTest {
         Admin admin = new Admin(1, "login", "password");
         Category category = new Category(1, "name");
         
-        Vacancy vacancy1 = new Vacancy(1, "title1", "descr1", date, 20000, "1 year", busymode, "Omsk", company, admin, category );
-        Vacancy vacancy2 = new Vacancy(2, "title2", "descr2", date, 25000, "2 years", busymode, "Omsk", company, admin, category);
-        Vacancy vacancy3 = new Vacancy(3, "title3", "descr3", date, 28000, "3 years", busymode, "Omsk", company, admin, category);
+        Vacancy vacancy1 = new Vacancy(1, "title1", "descr1", date, 20000, "1 year",  "Omsk", busymode, company, category, admin);
+        Vacancy vacancy2 = new Vacancy(2, "title2", "descr2", date, 25000, "2 years", "Omsk", busymode, company, category, admin);
+        Vacancy vacancy3 = new Vacancy(3, "title3", "descr3", date, 28000, "3 years", "Omsk", busymode, company, category, admin);
 
         List<Vacancy> vacancySet = new ArrayList<>();
         vacancySet.add(vacancy1);
@@ -74,9 +74,9 @@ public class CategoryTest {
         Admin admin = new Admin(1, "login", "password");
         Category category = new Category(1, "name");
 
-        Vacancy vacancy1 = new Vacancy(1, "title1", "descr1", date, 20000, "1 year", busymode, "Omsk", company, admin, category);
-        Vacancy vacancy2 = new Vacancy(2, "title2", "descr2", date, 25000, "2 year", busymode, "Omsk", company, admin, category);
-        Vacancy vacancy3 = new Vacancy(3, "title3", "descr3", date, 28000, "3 year", busymode, "Omsk", company, admin, category);
+        Vacancy vacancy1 = new Vacancy(1, "title1", "descr1", date, 20000, "1 year", "Omsk", busymode, company, category, admin);
+        Vacancy vacancy2 = new Vacancy(2, "title2", "descr2", date, 25000, "2 year", "Omsk", busymode, company, category, admin);
+        Vacancy vacancy3 = new Vacancy(3, "title3", "descr3", date, 28000, "3 year", "Omsk", busymode, company, category, admin);
 
         List<Vacancy> vacancySet1 = new ArrayList<>();
         vacancySet1.add(vacancy1);

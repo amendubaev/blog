@@ -22,8 +22,8 @@ public class Vacancy {
     public Vacancy(){
     }
 
-    public Vacancy(int id, String name, String description, Date date, int salary, String experience, BusyMode busymode, String location,
-            Company company, Admin admin, Category category) {
+    public Vacancy(int id, String name, String description, Date date, int salary, String experience,  String location, BusyMode busymode,
+            Company company, Category category, Admin admin) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -167,6 +167,6 @@ public class Vacancy {
     @Override
     public String toString() {
         return "Vacancy{" + "id=" + id + ", title=" + name + ", description=" + description + ", date=" + date + ", salary=" + salary + ", experience=" + experience
-                + ", location=" + location + ", company=" + company + ", admin=" + admin + ", category=" + category +'}';
+                + ", location=" + location + ",busymode=" + busymode + ", company=" + company + ", category=" + category + ", admin=" + admin +'}';
     }
 }
