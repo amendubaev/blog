@@ -1,7 +1,6 @@
-class CategoryService
-{
-    getAllCategory()
-    {
+class CategoryService {
+
+    getAllCategory() {
         var request = new XMLHttpRequest();
         request.open('GET', '/headhunter/GetAllCategory', false);
         request.send();
@@ -13,8 +12,7 @@ class CategoryService
         return null;
     }
 
-    getCategoryById(id)
-    {
+    getCategoryById(id) {
         var request = new XMLHttpRequest();
         request.open('GET', '/headhunter/GetCategoryById?id=' + id, false);
         request.send();
@@ -26,20 +24,15 @@ class CategoryService
         return null;
     }
 
-    insertCategory()
-    {
+    insertCategory() {
 
     }
 
-    updateCategory()
-    {
+    updateCategory() {
 
     }
 
-    deleteCategory()
-    {
+    deleteCategory() {
 
     }
 }
-
-
