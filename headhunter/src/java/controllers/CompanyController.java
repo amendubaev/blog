@@ -18,26 +18,26 @@ public class CompanyController {
         return companyDal.selectVacancyForCompany(id);
     }
 
-    public List<Company> selectAll()
+    public List<Company> getAllCompany()
     {
         return companyDal.selectAll();
     }
     
-    public Company selectById(int id)
+    public Company getCompanyById(int id)
     {
         return companyDal.selectById(id);
     }
     
-    public int insert(Company company)
+    public int insertCompany(Company company)
     {
         return companyDal.insert(company);
     }
-    public int update(Company company)
+    public int updateCompany(Company company)
     {
         return companyDal.update(company);
     }
     
-     public int delete(Company company)
+     public int deleteCompany(Company company)
     {
         return companyDal.delete(company);
     }
