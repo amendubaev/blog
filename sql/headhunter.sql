@@ -124,7 +124,7 @@ DROP TABLE IF EXISTS `vacancy`;
 CREATE TABLE `vacancy` (
   `id` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
-  `desription` varchar(1000) DEFAULT NULL,
+  `description` varchar(1000) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `salary` int(10) DEFAULT NULL,
   `experience` varchar(100) DEFAULT NULL,

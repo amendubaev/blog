@@ -51,7 +51,8 @@
     </select>
      
     <select id="selectById" parameterType="int" resultMap="vacancyResult">  
-        select * from vacancy WHERE id = #{id}
+        select * from vacancy join company on company.id = vacancy.id_company
+        WHERE vacancy.id = #{id}
     </select>
     
     <select id="selectAll" resultMap="vacancyResult">  
