@@ -51,7 +51,7 @@ public class CompanyControllerTest {
     @Test
     public void testUpdateCompany() {
         System.out.println("CompanyController updateCompany");
-        Company company = new Company(100, "nCompany", "nDescription", "n98008008080", null);
+        Company company = new Company(7, "nCompany", "nDescription", "n98008008080", null);
         CompanyController instance = new CompanyController();
         int expResult = 1;
         int result = instance.updateCompany(company);

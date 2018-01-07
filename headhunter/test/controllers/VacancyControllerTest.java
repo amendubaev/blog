@@ -61,7 +61,7 @@ public class VacancyControllerTest {
         int id_company = 2;
         int id_category = 2;
         int id_admin = 2; 
-        Vacancy vacancy = new Vacancy(100, "nName","nDescription",date,10000,"nexperience","nlocation",id_busymode,id_company,id_category,id_admin);
+        Vacancy vacancy = new Vacancy(1, "nName","nDescription",date,10000,"nexperience","nlocation",id_busymode,id_company,id_category,id_admin);
         VacancyController instance = new VacancyController();
         int expResult = 1;
         int result = instance.updateVacancy(vacancy);
