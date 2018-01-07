@@ -127,7 +127,7 @@ CREATE TABLE `vacancy` (
   `desription` varchar(1000) DEFAULT NULL,
   `date` date DEFAULT NULL,
   `salary` int(10) DEFAULT NULL,
-  `experiance` varchar(100) DEFAULT NULL,
+  `experience` varchar(100) DEFAULT NULL,
   `location` varchar(100) DEFAULT NULL,
   `id_busymode` int(11) DEFAULT NULL,
   `id_company` int(11) DEFAULT NULL,

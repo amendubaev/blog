@@ -13,8 +13,8 @@
         <result property="experience" column="experience" />
         <result property="location" column="location" />
         <association property="company" column="id_company" javaType="model.Company">
-            <id property="id" column="id"/>
-            <result property="name" column="name"/>
+            <id property="id" column="id" />
+            <result property="name" column="name" />
             <result property="description" column="description" />
             <result property="phone" column="phone" />
             <result property="logo" column="logo" />
@@ -23,15 +23,15 @@
             <id property="id" column="id" />
             <result property="name" column="name" />
         </association>
-        <association property="busymode" column="id_busymode" javaType="model.Company">
+        <association property="busymode" column="id_busymode" javaType="model.BusyMode">
             <id property="id" column="id" />
             <result property="name" column="name" />
-        </association>   
+        </association>
         <association property="admin" column="id_admin" javaType="model.Admin">
             <id property="id" column="id" />
             <result property="login" column="login" />
             <result property="password" column="password" />
-        </association>   
+        </association>
     </resultMap>  
     
     <select id="selectVacancyForCompany" resultMap="vacancyResult">  
@@ -63,7 +63,7 @@
     </delete> 
 
     <insert id = "insert" parameterType = "model.Vacancy"> 
-        INSERT INTO vacancy (id, name, description, date, salary, experience, location, id_busymode, id_company, id_category, id_admin) 
+        INSERT INTO vacancy (id, name, description, date, salary, experience, location, busymode, company, category, admin) 
         VALUES (#{id},#{name},#{description},#{date},#{salary},#{experience},#{location},#{id_busymode},#{id_company},#{id_category},#{id_admin)};     
     </insert> 
 
