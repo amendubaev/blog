@@ -40,14 +40,6 @@ public class BusyModeControllerTest {
     }
     
     @Test
-    public void testSelectVacancyForBM() {
-        System.out.println("BusyModeController selectVacancyForBM");
-        BusyModeController instance = new BusyModeController();
-        List<Vacancy> result = instance.selectVacancyForBM(100);
-        assertTrue(result != null);
-    }
-
-    @Test
     public void testUpdateBusyMode() {
         System.out.println("BusyModeController updateBusyMode");
         BusyMode busymode = new BusyMode(100, "nBusyMode");
@@ -55,6 +47,14 @@ public class BusyModeControllerTest {
         int expResult = 1;
         int result = instance.updateBusyMode(busymode);
         assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testSelectVacancyForBM() {
+        System.out.println("BusyModeController selectVacancyForBM");
+        BusyModeController instance = new BusyModeController();
+        List<Vacancy> result = instance.selectVacancyForBM(100);
+        assertTrue(result != null);
     }
 
     @Test

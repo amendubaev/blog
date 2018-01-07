@@ -13,7 +13,7 @@ public class CategoryDAL extends BaseDAL {
     
     public List<Vacancy> selectVacancyForCategory(int id){
         SqlSession session = sqlSessionFactory.openSession();
-        List<Vacancy> vacancys = session.selectList("busymode.selectVacancyForCategory", id);
+        List<Vacancy> vacancys = session.selectList("category.selectVacancyForCategory", id);
         session.close();
         return vacancys;
     }

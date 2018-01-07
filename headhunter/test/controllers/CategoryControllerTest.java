@@ -47,14 +47,6 @@ public class CategoryControllerTest {
         int result = instance.insertCategory(category);
         assertEquals(expResult, result);
     }
-    
-    @Test
-    public void testSelectVacancyForCategory() {
-        System.out.println("CategoryController selectVacancyForCategory");
-        CategoryController instance = new CategoryController();
-        List<Vacancy> result = instance.selectVacancyForCategory(100);
-        assertTrue(result != null);
-    }
 
     @Test
     public void testUpdateCategory() {
@@ -64,6 +56,14 @@ public class CategoryControllerTest {
         int expResult = 1;
         int result = instance.updateCategory(category);
         assertEquals(expResult, result);
+    }
+    
+    @Test
+    public void testSelectVacancyForCategory() {
+        System.out.println("CategoryController selectVacancyForCategory");
+        CategoryController instance = new CategoryController();
+        List<Vacancy> result = instance.selectVacancyForCategory(100);
+        assertTrue(result != null);
     }
 
     @Test

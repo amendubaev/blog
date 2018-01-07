@@ -35,7 +35,7 @@ public class BusyModeDALTest {
     public void testSelectVacancyForBM() {
         System.out.println("BusyModeDal selectVacancyForBM");
         BusyModeDAL instance = new BusyModeDAL();
-        List<Vacancy> result = instance.selectVacancyForBM(1);
+        List<Vacancy> result = instance.selectVacancyForBM(100);
         assertTrue(result != null);
     }
     
