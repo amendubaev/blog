@@ -21,13 +21,13 @@ public class VacancyControllerTest {
       public VacancyControllerTest() {
     }
 
-//    @Test
-//    public void testGetAllVacancy() {
-//        System.out.println("VacancyController getAllVacancy");
-//        VacancyController instance = new VacancyController();
-//        List<Vacancy> result = instance.getAllVacancy();
-//        assertTrue(result != null && result.size() >= 1);
-//    }
+    @Test
+    public void testGetAllVacancy() {
+        System.out.println("VacancyController getAllVacancy");
+        VacancyController instance = new VacancyController();
+        List<Vacancy> result = instance.getAllVacancy();
+        assertTrue(result != null && result.size() >= 1);
+    }
 
     @Test
     public void testGetVacancyById() {

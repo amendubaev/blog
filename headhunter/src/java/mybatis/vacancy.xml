@@ -13,28 +13,28 @@
         <result property="experience" column="experience" />
         <result property="location" column="location" />
         <association property="company" column="id_company" javaType="model.Company">
-            <id property="id" column="id" />
-            <result property="name" column="name" />
-            <result property="description" column="description" />
-            <result property="phone" column="phone" />
-            <result property="logo" column="logo" />
+            <id property="id" column="company_id" />
+            <result property="name" column="company_name" />
+            <result property="description" column="company_description" />
+            <result property="phone" column="company_phone" />
+            <result property="logo" column="company_logo" />
         </association>
         <association property="category" column="id_category" javaType="model.Category">
-            <id property="id" column="id" />
-            <result property="name" column="name" />
+            <id property="id" column="category_id" />
+            <result property="name" column="category_name" />
         </association>
         <association property="busymode" column="id_busymode" javaType="model.BusyMode">
-            <id property="id" column="id" />
-            <result property="name" column="name" />
+            <id property="id" column="busymode_id" />
+            <result property="name" column="busymode_name" />
         </association>
         <association property="admin" column="id_admin" javaType="model.Admin">
-            <id property="id" column="id" />
-            <result property="login" column="login" />
-            <result property="password" column="password" />
+            <id property="id" column="admin_id" />
+            <result property="login" column="admin_login" />
+            <result property="password" column="admin_password" />
         </association>
     </resultMap>  
     
-    <select id="selectVacancyForCompany" resultMap="vacancyResult">  
+<!--    <select id="selectVacancyForCompany" resultMap="vacancyResult">  
         select * from company JOIN vacancy ON company.id = #{vacancy.id_company} 
     </select>
     
@@ -48,15 +48,45 @@
     
     <select id="selectVacancyForAdmin" resultMap="vacancyResult">  
         select * from admin JOIN vacancy ON admin.id = #{vacancy.id_admin}
-    </select>
+    </select>-->
      
     <select id="selectById" parameterType="int" resultMap="vacancyResult">  
-        select * from vacancy join company on company.id = vacancy.id_company
+        select *, company.id as company_id,
+        company.name as company_name,
+        company.description as company_description,
+        company.phone as company_phone,
+        company.logo as company_logo,
+        category.id as category_id,
+        category.name as category_name,
+        busymode.id as busymode_id,
+        busymode.name as busymode_name,
+        admin.id as admin_id,
+        admin.login as admin_login,
+        admin.password as admin_password
+        from vacancy join company on company.id = vacancy.id_company
+        join category on category.id = vacancy.id_category
+        join busymode on busymode.id = vacancy.id_busymode
+        join admin on admin.id = vacancy.id_admin
         WHERE vacancy.id = #{id}
     </select>
     
     <select id="selectAll" resultMap="vacancyResult">  
-        select * from vacancy 
+        select *, company.id as company_id,
+        company.name as company_name,
+        company.description as company_description,
+        company.phone as company_phone,
+        company.logo as company_logo,
+        category.id as category_id,
+        category.name as category_name,
+        busymode.id as busymode_id,
+        busymode.name as busymode_name,
+        admin.id as admin_id,
+        admin.login as admin_login,
+        admin.password as admin_password
+        from vacancy join company on company.id = vacancy.id_company
+        join category on category.id = vacancy.id_category
+        join busymode on busymode.id = vacancy.id_busymode
+        join admin on admin.id = vacancy.id_admin
     </select>
     
     <delete id = "delete" parameterType = "model.Vacancy"> 
