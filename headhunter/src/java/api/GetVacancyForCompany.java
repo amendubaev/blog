@@ -1,32 +1,41 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package api;
 
+import controllers.CategoryController;
+import controllers.VacancyController;
 import controllers.CompanyController;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mappers.JsonCompany;
+import mappers.JsonVacancy;
+import model.Category;
 import model.Company;
+import model.Vacancy;
 
-@WebServlet(name = "InsertCompany", urlPatterns = {"/InsertCompany"})
+@WebServlet(name = "GetVacancyForCompany", urlPatterns = {"/GetVacancyForCompany"})
+public class GetVacancyForCompany extends HttpServlet {
 
-public class InsertCompany extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        String jsonObject = request.getParameter("json");
-        
-        try (PrintWriter out = response.getWriter()) 
-        {
-           Company company = JsonCompany.fromJSON(jsonObject);
-           CompanyController  companyController = new CompanyController();
-           int res=companyController.insertCompany(company);
-           out.print(res);
+        String ids = request.getParameter("id");
+        int id = Integer.parseInt(ids);
+        try (PrintWriter out = response.getWriter()) {
+            CompanyController companyController = new CompanyController();
+            List<Vacancy> vacancy = companyController.selectVacancyForCompany(id);
+            String companyJson = JsonVacancy.toJSON(vacancy);
+            out.println(companyJson);
         }
     }
 
@@ -48,4 +57,3 @@ public class InsertCompany extends HttpServlet {
     }
 
 }
-
