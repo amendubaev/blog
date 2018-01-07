@@ -62,7 +62,7 @@ public class BusyModeDALTest {
     @Test
     public void testDelete() {
         System.out.println("delete");
-        BusyMode busymode = new BusyMode(100, null, null);
+        BusyMode busymode = new BusyMode(100, null);
         BusyModeDAL instance = new BusyModeDAL();
         int expResult = 1;
         int result = instance.delete(busymode);

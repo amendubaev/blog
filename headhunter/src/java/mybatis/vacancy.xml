@@ -35,19 +35,19 @@
     </resultMap>  
     
     <select id="selectVacancyForCompany" resultMap="vacancyResult">  
-        select * from company JOIN vacancy ON id = #{id_company} 
+        select * from company JOIN vacancy ON company.id = #{vacancy.id_company} 
     </select>
     
     <select id="selectVacancyForCategory" resultMap="vacancyResult">  
-        select * from category JOIN vacancy ON id = #{id_category}
+        select * from category JOIN vacancy ON category.id = #{vacancy.id_category}
     </select>
     
     <select id="selectVacancyForBM" resultMap="vacancyResult">  
-        select * from busymode JOIN vacancy ON id = #{id_busymode}
+        select * from busymode JOIN vacancy ON busymode.id = #{vacancy.id_busymode}
     </select>
     
     <select id="selectVacancyForAdmin" resultMap="vacancyResult">  
-        select * from admin JOIN vacancy ON id = #{id_admin}
+        select * from admin JOIN vacancy ON admin.id = #{vacancy.id_admin}
     </select>
      
     <select id="selectById" parameterType="int" resultMap="vacancyResult">  

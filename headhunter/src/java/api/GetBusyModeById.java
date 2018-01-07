@@ -27,7 +27,7 @@ public class GetBusyModeById extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String ids = request.getParameter("id");
-        int id = 1;
+        int id = Integer.parseInt(ids);
         try (PrintWriter out = response.getWriter()) {
             BusyModeController busybodeController = new BusyModeController();
             BusyMode busybode=   busybodeController.getBusyModeById(id);
