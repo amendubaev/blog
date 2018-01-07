@@ -6,7 +6,7 @@
 package api;
 
 import controllers.CategoryController;
-import controllers.VacancyController;
+import controllers.CategoryController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -15,24 +15,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mappers.JsonCategory;
-import mappers.JsonVacancy;
+import mappers.JsonCategory;
 import model.Category;
-import model.Vacancy;
+import model.Category;
 
-@WebServlet(name = "GetVacancyById", urlPatterns = {"/GetVacancyById"})
-public class GetVacancyById extends HttpServlet {
+@WebServlet(name = "GetCategoryById", urlPatterns = {"/GetCategoryById"})
+public class GetCategoryById extends HttpServlet {
 
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String ids = request.getParameter("id");
-        int id = Integer.parseInt(ids);
+        int id = 2;
         try (PrintWriter out = response.getWriter()) {
-            VacancyController vacancyController = new VacancyController();
-            Vacancy vacancy=   vacancyController.getVacancyById(id);
-            String vacancyJson = JsonVacancy.toJSON(vacancy);
-            out.println(vacancyJson);
+            CategoryController categoryController = new CategoryController();
+            Category category=   categoryController.getCategoryById(id);
+            String categoryJson = JsonCategory.toJSON(category);
+            out.println(categoryJson);
         }
     }
 

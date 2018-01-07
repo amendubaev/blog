@@ -13,23 +13,23 @@ public class VacancyDAL extends BaseDAL {
         super();
     }
 
-    public List<Company> selectVacancyForCompany() {
+    public List<Company> selectVacancyForCompany(int id) {
         SqlSession session = sqlSessionFactory.openSession();
-        List<Company> companyes = session.selectList("vacancy.selectVacancyForCompany");
+        List<Company> companyes = session.selectList("vacancy.selectVacancyForCompany", id);
         session.close();
         return companyes;
     }
     
-    public List<Category> selectVacancyForCategory() {
+    public List<Category> selectVacancyForCategory(int id) {
         SqlSession session = sqlSessionFactory.openSession();
-        List<Category> categories = session.selectList("vacancy.selectVacancyForCategory");
+        List<Category> categories = session.selectList("vacancy.selectVacancyForCategory", id);
         session.close();
         return categories;
     }
     
-    public List<BusyMode> selectVacancyForBM() {
+    public List<BusyMode> selectVacancyForBM(int id) {
         SqlSession session = sqlSessionFactory.openSession();
-        List<BusyMode> busymodes = session.selectList("vacancy.selectVacancyForBM");
+        List<BusyMode> busymodes = session.selectList("vacancy.selectVacancyForBM", id);
         session.close();
         return busymodes;
     }
