@@ -21,37 +21,42 @@ public class VacancyControllerTest {
       public VacancyControllerTest() {
     }
 
-    @Test
-    public void testGetAllVacancy() {
-        System.out.println("VacancyController getAllVacancy");
-        VacancyController instance = new VacancyController();
-        List<Vacancy> result = instance.getAllVacancy();
-        assertTrue(result != null && result.size() >= 1);
-    }
-
-    @Test
-    public void testGetVacancyById() {
-        System.out.println("VacancyController getVacancyById");
-        int id = 1;
-        VacancyController instance = new VacancyController();
-        Vacancy result = instance.getVacancyById(id);
-        assertTrue(result != null && result.getId() == 1);
-    }
+//    @Test
+//    public void testGetAllVacancy() {
+//        System.out.println("VacancyController getAllVacancy");
+//        VacancyController instance = new VacancyController();
+//        List<Vacancy> result = instance.getAllVacancy();
+//        assertTrue(result != null && result.size() >= 1);
+//    }
 //
 //    @Test
-//    public void testInsertVacancy() {
-//        System.out.println("VacancyController insertVacancy");
-//        Date date = new Date();
-//        Company company = new Company(100, "Company", "Description", "98008008080", null);
-//        Category category = new Category(100, "Category");
-//        BusyMode busymode = new BusyMode(100, "BusyMode");
-//        Admin admin = new Admin(100, "user", "password");
-//        Vacancy vacancy = new Vacancy(100, "Name","Description",date,10000,"experience",busymode,"location",company,admin,category);
+//    public void testGetVacancyById() {
+//        System.out.println("VacancyController getVacancyById");
+//        int id = 1;
 //        VacancyController instance = new VacancyController();
-//        int expResult = 1;
-//        int result = instance.insertVacancy(vacancy);
-//        assertEquals(expResult, result);
+//        Vacancy result = instance.getVacancyById(id);
+//        assertTrue(result != null && result.getId() == 1);
 //    }
+//
+    @Test
+    public void testInsertVacancy() {
+        System.out.println("VacancyController insertVacancy");
+        Date date = new Date();
+        Company company = new Company(100, "Company", "Description", "98008008080", null);
+        Category category = new Category(100, "Category");
+        BusyMode busymode = new BusyMode(100, "BusyMode");
+        Admin admin = new Admin(100, "user", "password");
+        int id_busymode = 1;
+        int id_company = 1;
+        int id_category = 1;
+        int id_admin = 1;
+        
+        Vacancy vacancy = new Vacancy(100, "Name","Description",date,10000,"experience","location",id_busymode,id_company,id_category,id_admin);
+        VacancyController instance = new VacancyController();
+        int expResult = 1;
+        int result = instance.insertVacancy(vacancy);
+        assertEquals(expResult, result);
+    }
 //    
 //    @Test
 //    public void testUpdateVacancy() {

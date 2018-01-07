@@ -94,8 +94,8 @@
     </delete> 
 
     <insert id = "insert" parameterType = "model.Vacancy"> 
-        INSERT INTO vacancy (id, name, description, date, salary, experience, location, busymode, company, category, admin) 
-        VALUES (#{id},#{name},#{description},#{date},#{salary},#{experience},#{location},#{id_busymode},#{id_company},#{id_category},#{id_admin)};     
+        INSERT INTO vacancy (id, name, description, date, salary, experience, location, id_busymode, id_company, id_category, id_admin) 
+        VALUES (#{id},#{name},#{description},#{date},#{salary},#{experience},#{location},#{id_busymode},#{id_company},#{id_category},#{id_admin});     
     </insert> 
 
     <update id = "update" parameterType = "model.Vacancy"> 

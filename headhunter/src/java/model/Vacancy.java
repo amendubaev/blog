@@ -21,7 +21,7 @@ public class Vacancy {
     private int id_busymode;
     private int id_company;
     private int id_category;
-    private int id_admin;
+    private int id_admin; 
     
     public Vacancy(){
     }
@@ -41,7 +41,7 @@ public class Vacancy {
         this.category = category;
     }
     
-    public Vacancy(int id, String name, String description, Date date, int salary, String experience,  String location, int id_busymode,
+    public Vacancy(int id, String name, String description, Date date, int salary, String experience, String location, int id_busymode,
             int id_company, int id_category, int id_admin) {
         this.id = id;
         this.name = name;
@@ -54,6 +54,38 @@ public class Vacancy {
         this.id_company = id_company;
         this.id_admin = id_admin;
         this.id_category = id_category;
+    }
+    
+    public void setId_busymode(int id_busymode) {
+        this.id_busymode = id_busymode;
+    }
+
+    public void setId_company(int id_company) {
+        this.id_company = id_company;
+    }
+
+    public void setId_category(int id_category) {
+        this.id_category = id_category;
+    }
+
+    public void setId_admin(int id_admin) {
+        this.id_admin = id_admin;
+    }
+
+    public int getId_busymode() {
+        return id_busymode;
+    }
+
+    public int getId_company() {
+        return id_company;
+    }
+
+    public int getId_category() {
+        return id_category;
+    }
+
+    public int getId_admin() {
+        return id_admin;
     }
     
     public int getId() {
