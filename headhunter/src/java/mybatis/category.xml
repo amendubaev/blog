@@ -7,11 +7,27 @@
     <resultMap id="categoryResult" type ="model.Category">
         <id property="id" column="id" />
         <result property="name" column="name" />
-        <collection property="vacancy" javaType="List" ofType="model.Vacancy" column="id"/>
+        <collection property="vacancy" javaType="List" ofType="model.Vacancy" column="id" select="selectVacancyForCategory"/>
     </resultMap>  
     
     <select id="selectVacancyForCategory" parameterType="int" resultMap="vacancy.vacancyResult">  
-        SELECT * FROM vacancy WHERE id_category = #{id}
+        select *, company.id as company_id,
+        company.name as company_name,
+        company.description as company_description,
+        company.phone as company_phone,
+        company.logo as company_logo,
+        category.id as category_id,
+        category.name as category_name,
+        busymode.id as busymode_id,
+        busymode.name as busymode_name,
+        admin.id as admin_id,
+        admin.login as admin_login,
+        admin.password as admin_password
+        from vacancy join company on company.id = vacancy.id_company
+        join category on category.id = vacancy.id_category
+        join busymode on busymode.id = vacancy.id_busymode
+        join admin on admin.id = vacancy.id_admin
+        WHERE vacancy.id_category = #{id}
     </select>
 
     <select id="selectById" parameterType="int" resultMap="categoryResult">  
