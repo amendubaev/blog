@@ -18,10 +18,10 @@ public class Vacancy {
     private Company company;
     private Admin admin;
     private Category category;
-    private int busymodeID;
-    private int companyID;
-    private int categoryID;
-    private int adminID;
+    private int id_busymode;
+    private int id_company;
+    private int id_category;
+    private int id_admin;
     
     public Vacancy(){
     }
@@ -41,19 +41,19 @@ public class Vacancy {
         this.category = category;
     }
     
-    public Vacancy(int id, String name, String description, Date date, int salary, String experience,  String location, int busymodeID,
-            int companyID, int categoryID, int adminID) {
+    public Vacancy(int id, String name, String description, Date date, int salary, String experience,  String location, int id_busymode,
+            int id_company, int id_category, int id_admin) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.date = date;
         this.salary = salary;
         this.experience = experience;
-        this.busymodeID = busymodeID;
+        this.id_busymode = id_busymode;
         this.location = location;
-        this.companyID = companyID;
-        this.adminID = adminID;
-        this.categoryID = categoryID;
+        this.id_company = id_company;
+        this.id_admin = id_admin;
+        this.id_category = id_category;
     }
     
     public int getId() {
@@ -83,6 +83,10 @@ public class Vacancy {
     public BusyMode getBusymode() {
         return busymode;
     }
+    
+    public int getBusymodeID() {
+        return id_busymode;
+    }
 
     public String getLocation() {
         return location;
@@ -92,12 +96,24 @@ public class Vacancy {
         return company;
     }
 
+    public int getCompanyID() {
+        return id_company;
+    }
+    
     public Admin getAdmin() {
         return admin;
     }
     
+    public int getAdminID() {
+        return id_admin;
+    }
+    
     public Category getCategory() {
         return category;
+    }
+    
+    public int getCategoryID() {
+        return id_category;
     }
 
     public void setId(int id) {
@@ -128,6 +144,10 @@ public class Vacancy {
         this.busymode = busymode;
     }
 
+    public void setBusymodeID(int id_busymode) {
+        this.id_busymode = id_busymode;
+    }
+    
     public void setLocation(String location) {
         this.location = location;
     }
@@ -135,13 +155,25 @@ public class Vacancy {
     public void setCompany(Company company) {
         this.company = company;
     }
+    
+    public void setCompanyID(int id_company) {
+        this.id_company = id_company;
+    }
 
     public void setAdmin(Admin admin) {
         this.admin = admin;
     }
+    
+    public void setAdminID(int id_admin) {
+        this.id_admin = id_admin;
+    }
 
-    public void setCategory(Category category) {
+     public void setCategory(Category category) {
         this.category = category;
+    }
+    
+    public void setCategoryID(int id_category) {
+        this.id_category = id_category;
     }
     
     @Override
