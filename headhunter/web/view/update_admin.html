@@ -38,8 +38,6 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <h4>Выберите администратора: </h4>
                     <div id="admins">
-
-
                     </div>
                 </div>
 
@@ -53,7 +51,8 @@
                             <label for="password">Введите пароль администратора</label>
                             <input type="password" class="form-control" id="password" placeholder="Пароль">
                         </div>
-                        <button type="submit" class="btn btn-default" id="submitCategory">Изменить</button>
+                        <button type="button" class="btn btn-default" id="deleteAdmin">Удалить</button>
+                        <button type="submit" class="btn btn-default" id="submitAdmin">Изменить</button>
                     </form>
 
                 </div>
@@ -127,8 +126,31 @@
                             console.log("error");
                         }
                     });
-                }
-                );
+                });
+
+
+                $("#deleteAdmin").click(function () {
+                    var admin = {
+                        id: $("#adminForm").attr("data-adminId"),
+                        login: $("#login").val().toLowerCase(),
+                        password: $("#password").val()
+                    };
+                    $.ajax({
+                        url: "/headhunter/DeleteAdmin",
+                        type: "POST",
+                        dataType: "JSON",
+                        data: {
+                            json: JSON.stringify(admin)
+                        },
+                        success: function (data) {
+                            alert("Администратор успешно удален!");
+                            location.reload();
+                        },
+                        error: function () {
+                            console.log("error");
+                        }
+                    });
+                });
             }
             )();
 
