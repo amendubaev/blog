@@ -85,7 +85,9 @@ class VacancyController {
         "<b>Адрес: </b>" + vacancy.location + "<br>" +
         "<b>Режим занятости: </b>" + vacancy.busymode.name + "<br>" +
         "<b>Компания: </b>" + vacancy.company.name + "<br>" +
+        vacancy.company.description + "<br>" +
         "<b>Категория: </b>" + vacancy.category.name + "<br>" +
+        "<b>Телефон: </b>" + vacancy.company.phone + "<br>" +
         "<p align='right'>" + datepost + "</p>" +
         "</div>";
         element.innerHTML = html;
