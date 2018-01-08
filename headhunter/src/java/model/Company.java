@@ -1,6 +1,5 @@
 package model;
 
-import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -30,12 +29,22 @@ public class Company {
         this.vacancy = vacancy;
     }
 
+    public Company(int id, String name, String description, String phone, byte[] logo, List<Vacancy> vacancy) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.phone = phone;
+        this.logo = logo;
+        this.vacancy = vacancy;
+    }
+    
     public Company(int id, String name, String description, String phone, byte[] logo) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.phone = phone;
         this.logo = logo;
+        this.vacancy = new ArrayList<>();
     }
 
     public int getId() {
@@ -44,6 +53,10 @@ public class Company {
 
     public String getName() {
         return name;
+    }
+    
+    public List<Vacancy> getVacancy() {
+        return vacancy;
     }
 
     public String getDescription() {
@@ -64,6 +77,10 @@ public class Company {
 
     public void setName(String name) {
         this.name = name;
+    }
+    
+    public void setVacancy(List<Vacancy> vacancy) {
+        this.vacancy = vacancy;
     }
 
     public void setDescription(String description) {

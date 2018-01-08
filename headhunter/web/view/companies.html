@@ -4,18 +4,18 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Vacancy</title>
-        <link href="lib/css/bootstrap.min.css" rel="stylesheet">
-        <link href="lib/css/style.css" rel="stylesheet">
-        <script src="service/CategoryService.js"></script>
-        <script src="controllers/CategoryController.js"></script>
-        <script src="service/VacancyService.js"></script>
-        <script src="controllers/VacancyController.js"></script>
+        <title>Companies</title>
+        <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../lib/css/style.css" rel="stylesheet">
+        <script src="../service/CompanyService.js"></script>
+        <script src="../controllers/CompanyController.js"></script>
+        <script src="../service/VacancyService.js"></script>
+     <script src="../controllers/VacancyController.js"></script>
         <script>
-            function categoryClicked(id) {
+            function companyClicked(id) {
                 oneTime = true;
                 var vacancyController = new VacancyController();
-                vacancyController.getAllVacancyByIdCategoryView(id, oneTime);
+                vacancyController.getAllVacancyByIdCompanyView(id, oneTime);
             }
             
             function vacancyClicked(id) {
@@ -38,8 +38,8 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="/headhunter/view/companies.html">Companies</a></li>
+                        <li><a href="/headhunter">Home</a></li>
+                        <li class="active"><a href="#about">Companies</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -50,7 +50,7 @@
             <div class="row row-offcanvas row-offcanvas-right">
                 <div id="vacancy" class="col-xs-12 col-sm-9"></div>
                 <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-                    <div id="category" class="list-group"></div>
+                    <div id="company" class="list-group"></div>
                 </div>
             </div>
 
@@ -64,12 +64,12 @@
 
         <script>
             $(window).load(function () {
-                var categoryController = new CategoryController();
+                var companyController = new CompanyController();
                 var vacancyController = new VacancyController();
-                var categoryCount = categoryController.getAllCategoryViewListGroup();
+                var companyCount = companyController.getAllCompanyViewListGroup();
                 
-                for (var i = 1; i <= categoryCount; i++) {
-                    vacancyController.getAllVacancyByIdCategoryView(i);
+                for (var i = 1; i <= companyCount; i++) {
+                    vacancyController.getAllVacancyByIdCompanyView(i);
                 }
             });
         </script>

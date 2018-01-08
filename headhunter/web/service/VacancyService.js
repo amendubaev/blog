@@ -12,6 +12,18 @@ class VacancyService
         }
         return null;
     }
+    
+    getAllVacancyByCompanyId(id) {
+        var request = new XMLHttpRequest();
+        request.open('GET', '/headhunter/GetCompanyById?id=' + id, false);
+        request.send();
+        if (request.status === 200)
+        {
+            var company = JSON.parse(request.responseText);
+            return company.vacancy;
+        }
+        return null;
+    }
 
     getVacancyById(id) {
         var request = new XMLHttpRequest();
