@@ -16,7 +16,6 @@ class CategoryController
             html += "<a onclick ='categoryClicked(" + list[i].id + ")' class='list-group-item'>" + list[i].name + "</a>";
         }
         element.innerHTML = html;
-        console.log(lists.length);
         return list.length;
     }
     getAllCategoryViewListGroupListBox() {
