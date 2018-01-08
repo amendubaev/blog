@@ -40,7 +40,8 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="/headhunter/">Главная</a></li>
                         <li><a href="/headhunter/view/companies.html">Вакансии компаний</a></li>
-                        <li><a href="/headhunter/view/insert_vacancy.html">Добавить вакансию</a></li>
+                        <li><a href="/headhunter/view/insert_vacancy.html">Добавление вакансии</a></li>
+                        <li class="active"><a href="/headhunter/view/update_vacancy.html">Изменение вакансии</a></li>
                         <li><a href="/headhunter/view/insert_admin.html">Добавление администратора</a></li>
                         <li><a href="/headhunter/view/update_admin.html">Изменение администратора</a></li>
                     </ul>
@@ -67,11 +68,12 @@
         <script>
             $(window).load(function () {
                 var categoryController = new CategoryController();
+                var categoryIdsArray = categoryController.getAllCategoryViewListGroup();
+                console.log(categoryIdsArray);
                 var vacancyController = new VacancyController();
-                var categoryCount = categoryController.getAllCategoryViewListGroup();
                 
-                for (var i = 1; i <= categoryCount; i++) {
-                    vacancyController.getAllVacancyByIdCategoryView(i);
+                for (var i = 0; i < categoryIdsArray.length; i++) {
+                    vacancyController.getAllVacancyByIdCategoryView(categoryIdsArray[i]);
                 }
             });
         </script>
