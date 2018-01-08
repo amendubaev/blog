@@ -31,7 +31,7 @@
                         <li><a href="/headhunter/">Главная</a></li>
                         <li class="active"><a href="/headhunter/view/companies.html">Вакансии компаний</a></li>
                         <li><a href="/headhunter/view/insert_vacancy.html">Добавление вакансии</a></li>
-                        <li class="active"><a href="/headhunter/view/update_vacancy.html">Изменение вакансии</a></li>
+                        <li><a href="/headhunter/view/update_vacancy.html">Изменение вакансии</a></li>
                         <li><a href="/headhunter/view/insert_admin.html">Добавление администратора</a></li>
                         <li><a href="/headhunter/view/update_admin.html">Изменение администратора</a></li>
                     </ul>
@@ -42,6 +42,12 @@
         <div class="container">
             <div class="row row-offcanvas row-offcanvas-right">
                 <div id="vacancy" class="col-xs-12 col-sm-12 col-md-12"></div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <form>
+
+                        <button type="button" class="btn btn-default" id="changeVacancy">Изменить</button>
+                    </form>
+                </div>
             </div>
 
             <hr>
@@ -58,6 +64,10 @@
                 var id = url.searchParams.get("id");
                 var vacancyController = new VacancyController();
                 vacancyController.getVacancyByIdView(id);
+
+                $('#changeVacancy').click(function () {
+                    document.location.href = "/headhunter/view/update_vacancy.html?id=" + id;
+                });
             });
         </script>    
     </body>

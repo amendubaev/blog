@@ -98,9 +98,9 @@ class VacancyController {
         element.innerHTML += html;
     }
     
-    getAllVacancyByIdCompanyViewUpdate(id, oneTime) {
+    getAllVacancyByIdCompanyView(id, oneTime) {
         var vacancy = this.getAllVacancyByIdCompany(id);
-        var element = document.getElementById("vacancys");
+        var element = document.getElementById("vacancy");
         var html = "";
         console.log(vacancy);
         for (var i = 0; i < vacancy.length; i++) {
@@ -181,6 +181,19 @@ class VacancyController {
         "<p align='right'>" + datepost + "</p>" +
         "</div>";
         element.innerHTML = html;
+    }
+    
+    getShortVacancyByIdView(id) {
+        var vacancy = this.getVacancyById(id);      
+        
+        $("#InputVacancy").val(vacancy.name);
+        $("#InputVacancyDescription").val(vacancy.description);
+        $("#InputVacancySalary").val(vacancy.salary);
+        $("#InputVacancyExperience").val(vacancy.experience);
+        $("#InputVacancyLocation").val(vacancy.location);
+        $("#busyModeList").val(vacancy.busymode.id);
+        $("#companyList").val(vacancy.company.id);
+        $("#categoryList").val(vacancy.category.id);
     }
 
 }

@@ -1,21 +1,23 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Изменние вакансии</title>
+        <title>Вакансия</title>
         <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
         <link href="../lib/css/style.css" rel="stylesheet">
-        <script src="../service/VacancyService.js"></script>
-        <script src="../controllers/VacancyController.js"></script>
         <script src="../service/CategoryService.js"></script>
         <script src="../controllers/CategoryController.js"></script>
+        <script src="../service/VacancyService.js"></script>
+        <script src="../controllers/VacancyController.js"></script>
         <script src="../service/CompanyService.js"></script>
         <script src="../controllers/CompanyController.js"></script>
         <script src="../service/BusyModeService.js"></script>
         <script src="../controllers/BusyModeController.js"></script>
     </head>
-    <body>  
+
+    <body>
 
         <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
             <div class="container">
@@ -41,155 +43,119 @@
             </div>
         </div>
 
-        <br>
         <div class="container">
-            <div class="row row-offcanvas row-offcanvas-right">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <h4>Выберите вакансию: </h4>
-                    <div id="vacancys">
+            <div class="container">
+                <div class="row row-offcanvas row-offcanvas-right">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <form id="InputVacancySubmit">
+                            <div class="form-group">
+                                <label for="InputVacancy">Введите вакансию</label>
+                                <input type="text" class="form-control" id="InputVacancy" placeholder="Вакансия">
+                                <label for="InputVacancySalary">Введите заработную плату</label>
+                                <input type="text" class="form-control" id="InputVacancySalary" placeholder="Заработная плата">
+                                <label for="InputVacancyExperience">Введите опыт работы</label>
+                                <input type="text" class="form-control" id="InputVacancyExperience" placeholder="Опыт работы">
+                                <label for="InputVacancyLocation">Введите Адрес</label>
+                                <input type="text" class="form-control" id="InputVacancyLocation" placeholder="Адрес">
+                                <label for="busyModeList">Выберите режим занятости</label>
+                                <select id="busyModeList" class="form-control">
+                                </select>
+                                <label for="companyList">Выберите компанию</label>
+                                <select id="companyList" class="form-control">
+                                </select>
+                                <label for="InputVacancyDescription">Введите описание</label>
+                                <input type="text" class="form-control" id="InputVacancyDescription" placeholder="Описание">
+                                <label for="categoryList">Выберите категорию</label>
+                                <select id="categoryList" class="form-control">
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-default" id="deleteVacancy">Удалить</button>
+                            <button type="submit" class="btn btn-default" id="submitVacancy">Изменить</button>
+                        </form>
+
                     </div>
-                </div>
-
-
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <br>
-                    <form id="InputVacancySubmit">
-                        <div class="form-group">
-                            <label for="InputVacancy">Введите вакансию</label>
-                            <input type="text" class="form-control" id="InputVacancy" placeholder="Вакансия">
-                            <label for="InputVacancySalary">Введите заработную плату</label>
-                            <input type="text" class="form-control" id="InputVacancySalary" placeholder="Заработная плата">
-                            <label for="InputVacancyExperience">Введите опыт работы</label>
-                            <input type="text" class="form-control" id="InputVacancyExperience" placeholder="Опыт работы">
-                            <label for="InputVacancyLocation">Введите Адрес</label>
-                            <input type="text" class="form-control" id="InputVacancyLocation" placeholder="Адрес">
-                            <label for="busyModeList">Выберите режим занятости</label>
-                            <select id="busyModeList" class="form-control">
-                            </select>
-                            <label for="companyList">Выберите компанию</label>
-                            <select id="companyList" class="form-control">
-                            </select>
-                            <label for="InputVacancyDescription">Введите описание</label>
-                            <input type="text" class="form-control" id="InputVacancyDescription" placeholder="Описание">
-                            <label for="categoryList">Выберите категорию</label>
-                            <select id="categoryList" class="form-control">
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-default" id="submitVacancy">Изменить</button>
-                    </form>
-
                 </div>
             </div>
 
-            <hr>
             <footer>
                 <p>&copy; OmSTU 2018</p>
             </footer>
         </div>
         <script src="../lib/js/jquery.min.js"></script>
         <script src="../lib/js/bootstrap.min.js"></script>
+
         <script>
-            var categoryController = new CategoryController();
-            var categoryCount = categoryController.getAllCategoryViewListGroupListBox();
-            var companyController = new CompanyController();
-            var companyCount = companyController.getAllCompanyViewListGroupListBox();
-            var busyModeController = new BusyModeController();
-            var busyModeCount = busyModeController.getAllBusyModeListBox();
-            
-            var vacancyController = new VacancyController();                
-            for (var i = 1; i <= categoryCount; i++) {
-                vacancyController.getAllVacancyByIdCategoryViewUpdate(i);
-            }
-            
-            function getAllAdmin() {
-                var request = new XMLHttpRequest();
-                request.open('GET', '/headhunter/GetAllAdmin', false);
-                request.send();
-                if (request.status === 200)
-                {
-                    var listCategory = JSON.parse(request.responseText);
-                    return listCategory;
-                }
-                return null;
-            }
-
-            function vacancyClicked(adminId, login, password) {
-
-                $("#adminForm").attr("data-adminId", adminId);
-                $("#login").val(login.toString());
-                $("#password").val(password.toString());
-            }
-
-            (function () {
-
-                let admins = getAllAdmin();
-                let adminId = 0;
-                let login = "";
-                let password = "";
-
-                var element = document.getElementById("admins");
-                var html = "";
-                for (var i = 0; i < admins.length; i++) {
-                    adminId = admins[i].id;
-                    login = admins[i].login;
-                    password = admins[i].password;
-                    html += `<a onclick ="adminClicked(${adminId}, '${login}', '${password}')" class='list-group-item'> ${admins[i].id}: ${admins[i].login}</a>`;
-
-                }
-                element.innerHTML = html;
-                console.log(admins.length);
+            $(window).load(function () {
+                var url = new URL(document.location.href);
+                var id = url.searchParams.get("id");
+                var vacancyController = new VacancyController();
+                vacancyController.getShortVacancyByIdView(id);
 
 
-                $("#adminForm").submit(function (event) {
+                var categoryController = new CategoryController();
+                var categoryCount = categoryController.getAllCategoryViewListGroupListBox();
+                var companyController = new CompanyController();
+                var companyCount = companyController.getAllCompanyViewListGroupListBox();
+                var busyModeController = new BusyModeController();
+                var busyModeCount = busyModeController.getAllBusyModeListBox();
+
+                $("#InputVacancySubmit").submit(function (event) {
                     event.preventDefault();
-                    var admin = {
-                        id: $("#adminForm").attr("data-adminId"),
-                        login: $("#login").val().toLowerCase(),
-                        password: $("#password").val()
+
+                    var vacancy = {
+                        id: id,
+                        name: $("#InputVacancy").val(),
+                        description: $("#InputVacancyDescription").val(),
+                        date: Date.now(),
+                        salary: $("#InputVacancySalary").val(),
+                        experience: $("#InputVacancyExperience").val(),
+                        location: $("#InputVacancyLocation").val(),
+                        id_busymode: $("#InputVacancyBusyMode:checked").val(),
+                        id_company: $("#InputVacancyCompany:checked").val(),
+                        id_category: $("#InputVacancyCategory:checked").val(),
+                        id_admin: 1,
                     };
+
                     $.ajax({
-                        url: "/headhunter/UpdateAdmin",
+                        url: "/headhunter/UpdateVacancy",
                         type: "POST",
                         dataType: "JSON",
                         data: {
-                            json: JSON.stringify(admin)
+                            json: JSON.stringify(vacancy)
                         },
                         success: function (data) {
-                            alert("Администратор успешно изменен!");
+                            console.log(data);
+                            alert("Вакансия успешно изменена!");
+
                         },
                         error: function () {
                             console.log("error");
                         }
                     });
-                });
 
-
-                $("#deleteAdmin").click(function () {
-                    var admin = {
-                        id: $("#adminForm").attr("data-adminId"),
-                        login: $("#login").val().toLowerCase(),
-                        password: $("#password").val()
-                    };
-                    $.ajax({
-                        url: "/headhunter/DeleteAdmin",
-                        type: "POST",
-                        dataType: "JSON",
-                        data: {
-                            json: JSON.stringify(admin)
-                        },
-                        success: function (data) {
-                            alert("Администратор успешно удален!");
-                            location.reload();
-                        },
-                        error: function () {
-                            console.log("error");
-                        }
+                    $("#deleteVacancy").click(function () {
+                        var vacancy = {
+                            id: id
+                        };
+                        $.ajax({
+                            url: "/headhunter/DeleteVacancy",
+                            type: "POST",
+                            dataType: "JSON",
+                            data: {
+                                json: JSON.stringify(vacancy)
+                            },
+                            success: function (data) {
+                                alert("Вакансия успешно удалена!");
+                                document.location.href = "/headhunter/";
+                            },
+                            error: function () {
+                                console.log("error");
+                            }
+                        });
                     });
                 });
-            }
-            )();
 
-        </script>
-
+            });
+        </script>    
     </body>
 </html>

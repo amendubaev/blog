@@ -14,7 +14,7 @@
         <script src="../controllers/BusyModeController.js"></script>
     </head>
     <body>  
-        
+
         <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -37,7 +37,7 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="container">
             <div class="row row-offcanvas row-offcanvas-right">
                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -65,7 +65,7 @@
                         </div>
                         <button type="submit" class="btn btn-default" id="submitVacancy">Добавить</button>
                     </form>
-                    
+
                 </div>
             </div>
 
@@ -84,7 +84,7 @@
             var companyCount = companyController.getAllCompanyViewListGroupListBox();
             var busyModeController = new BusyModeController();
             var busyModeCount = busyModeController.getAllBusyModeListBox();
-     
+
             $("#InputVacancySubmit").submit(function (event) {
                 event.preventDefault();
 
@@ -100,7 +100,7 @@
                     id_category: $("#InputVacancyCategory:checked").val(),
                     id_admin: 1,
                 };
-                
+
                 $.ajax({
                     url: "/headhunter/InsertVacancy",
                     type: "POST",
@@ -109,8 +109,8 @@
                         json: JSON.stringify(vacancy)
                     },
                     success: function (data) {
-                       console.log(data);
-                       alert("Вакансия успешно добавлена!");
+                        console.log(data);
+                        alert("Вакансия успешно добавлена!");
                     },
                     error: function () {
                         console.log("error");
