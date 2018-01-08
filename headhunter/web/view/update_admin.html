@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Изменить администратора</title>
+        <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../lib/css/style.css" rel="stylesheet">
+    </head>
+    <body>  
+
+        <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Вакансии</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Вакансии</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/headhunter/">Главная</a></li>
+                        <li><a href="/headhunter/view/companies.html">Вакансии компаний</a></li>
+                        <li><a href="/headhunter/view/insert_category.html">Добавить категорию</a></li>
+                        <li><a href="/headhunter/view/insert_admin.html">Добавить администратора</a></li>
+                        <li class="active"><a href="/headhunter/view/update_admin.html">Изменить администратора</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="container">
+            <div class="row row-offcanvas row-offcanvas-right">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <h4>Выберите администратора: </h4>
+                    <div id="admins">
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <br>
+                    <form id="adminForm" data-adminId="">
+                        <div class="form-group">
+                            <label for="login">Введите логин администратора</label>
+                            <input type="text" class="form-control" id="login" placeholder="Логин">
+                            <label for="password">Введите пароль администратора</label>
+                            <input type="password" class="form-control" id="password" placeholder="Пароль">
+                        </div>
+                        <button type="submit" class="btn btn-default" id="submitCategory">Изменить</button>
+                    </form>
+
+                </div>
+            </div>
+
+            <hr>
+            <footer>
+                <p>&copy; OmSTU 2018</p>
+            </footer>
+        </div>
+        <script src="../lib/js/jquery.min.js"></script>
+        <script src="../lib/js/bootstrap.min.js"></script>
+        <script>
+            function getAllAdmin() {
+                var request = new XMLHttpRequest();
+                request.open('GET', '/headhunter/GetAllAdmin', false);
+                request.send();
+                if (request.status === 200)
+                {
+                    var listCategory = JSON.parse(request.responseText);
+                    return listCategory;
+                }
+                return null;
+            }
+
+            function adminClicked(adminId, login, password) {
+
+                $("#adminForm").attr("data-adminId", adminId);
+                $("#login").val(login.toString());
+                $("#password").val(password.toString());
+            }
+
+            (function () {
+
+                let admins = getAllAdmin();
+                let adminId = 0;
+                let login = "";
+                let password = "";
+
+                var element = document.getElementById("admins");
+                var html = "";
+                for (var i = 0; i < admins.length; i++) {
+                    adminId = admins[i].id;
+                    login = admins[i].login;
+                    password = admins[i].password;
+                    html += `<a onclick ="adminClicked(${adminId}, '${login}', '${password}')" class='list-group-item'> ${admins[i].id}: ${admins[i].login}</a>`;
+
+                }
+                element.innerHTML = html;
+                console.log(admins.length);
+
+
+                $("#adminForm").submit(function (event) {
+                    event.preventDefault();
+                    var admin = {
+                        id: $("#adminForm").attr("data-adminId"),
+                        login: $("#login").val().toLowerCase(),
+                        password: $("#password").val()
+                    };
+                    $.ajax({
+                        url: "/headhunter/UpdateAdmin",
+                        type: "POST",
+                        dataType: "JSON",
+                        data: {
+                            json: JSON.stringify(admin)
+                        },
+                        success: function (data) {
+                            alert("Администратор успешно изменен!");
+                        },
+                        error: function () {
+                            console.log("error");
+                        }
+                    });
+                }
+                );
+            }
+            )();
+
+        </script>
+
+    </body>
+</html>
