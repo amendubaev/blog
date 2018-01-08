@@ -1,60 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vacancy</title>
-    <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../lib/css/style.css" rel="stylesheet">
-    <script src="../service/CategoryService.js"></script>
-    <script src="../controllers/CategoryController.js"></script>
-    <script src="../service/VacancyService.js"></script>
-    <script src="../controllers/VacancyController.js"></script>
-  </head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Vacancy</title>
+        <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../lib/css/style.css" rel="stylesheet">
+        <script src="../service/CategoryService.js"></script>
+        <script src="../controllers/CategoryController.js"></script>
+        <script src="../service/VacancyService.js"></script>
+        <script src="../controllers/VacancyController.js"></script>
+    </head>
 
-  <body>
-    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Vacancy</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Vacancy</a>
+    <body>
+
+        <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Вакансии</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Вакансии</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/headhunter/">Главная</a></li>
+                        <li class="active"><a href="/headhunter/view/companies.html">Вакансии компаний</a></li>
+                        <li><a href="/headhunter/view/insert_category.html">Добавить категорию</a></li>
+                        <li><a href="/headhunter/view/insert_admin.html">Добавить администратора</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="/headhunter">Все вакансии</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+
+        <div class="container">
+            <div class="row row-offcanvas row-offcanvas-right">
+                <div id="vacancy" class="col-xs-12 col-sm-12 col-md-12"></div>
+            </div>
+
+            <hr>
+            <footer>
+                <p>&copy; OmSTU 2018</p>
+            </footer>
         </div>
-      </div>
-    </div>
+        <script src="../lib/js/jquery.min.js"></script>
+        <script src="../lib/js/bootstrap.min.js"></script>
 
-    <div class="container">
-      <div class="row row-offcanvas row-offcanvas-right">
-        <div id="vacancy" class="col-xs-12 col-sm-12 col-md-12"></div>
-      </div>
-
-        <hr>
-      <footer>
-        <p>&copy; OmSTU 2018</p>
-      </footer>
-    </div>
-    <script src="../lib/js/jquery.min.js"></script>
-    <script src="../lib/js/bootstrap.min.js"></script>
-    
-    <script>
-        $(window).load(function() {
-            var url = new URL(document.location.href);
-            var id= url.searchParams.get("id");
-            var vacancyController = new VacancyController();
-            vacancyController.getVacancyByIdView(id);
-        });
-    </script>    
-  </body>
+        <script>
+            $(window).load(function () {
+                var url = new URL(document.location.href);
+                var id = url.searchParams.get("id");
+                var vacancyController = new VacancyController();
+                vacancyController.getVacancyByIdView(id);
+            });
+        </script>    
+    </body>
 </html>

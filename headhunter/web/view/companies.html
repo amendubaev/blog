@@ -4,20 +4,20 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Companies</title>
+        <title>Вакансии компаний</title>
         <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
         <link href="../lib/css/style.css" rel="stylesheet">
         <script src="../service/CompanyService.js"></script>
         <script src="../controllers/CompanyController.js"></script>
         <script src="../service/VacancyService.js"></script>
-     <script src="../controllers/VacancyController.js"></script>
+        <script src="../controllers/VacancyController.js"></script>
         <script>
             function companyClicked(id) {
                 oneTime = true;
                 var vacancyController = new VacancyController();
                 vacancyController.getAllVacancyByIdCompanyView(id, oneTime);
             }
-            
+
             function vacancyClicked(id) {
                 document.location.href = "/headhunter/view/vacancy.html?id=" + id;
             }
@@ -25,22 +25,24 @@
     </head>
 
     <body>
+
         <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Vacancy</span>
+                        <span class="sr-only">Вакансии</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Vacancy</a>
+                    <a class="navbar-brand" href="#">Вакансии</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="/headhunter">Home</a></li>
-                        <li class="active"><a href="#about">Companies</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="/headhunter/">Главная</a></li>
+                        <li class="active"><a href="/headhunter/view/companies.html">Вакансии компаний</a></li>
+                        <li><a href="/headhunter/view/insert_category.html">Добавить категорию</a></li>
+                        <li><a href="/headhunter/view/insert_admin.html">Добавить администратора</a></li>
                     </ul>
                 </div>
             </div>
@@ -67,7 +69,7 @@
                 var companyController = new CompanyController();
                 var vacancyController = new VacancyController();
                 var companyCount = companyController.getAllCompanyViewListGroup();
-                
+
                 for (var i = 1; i <= companyCount; i++) {
                     vacancyController.getAllVacancyByIdCompanyView(i);
                 }
