@@ -31,7 +31,6 @@
                         <li><a href="/headhunter/">Главная</a></li>
                         <li><a href="/headhunter/view/companies.html">Вакансии компаний</a></li>
                         <li class="active"><a href="/headhunter/view/insert_vacancy.html">Добавить вакансию</a></li>
-                        <li><a href="/headhunter/view/insert_category.html">Добавить категорию</a></li>
                         <li><a href="/headhunter/view/insert_admin.html">Добавление администратора</a></li>
                         <li><a href="/headhunter/view/update_admin.html">Изменение администратора</a></li>
                     </ul>
@@ -46,7 +45,7 @@
                         <div class="form-group">
                             <label for="InputVacancy">Введите вакансию</label>
                             <input type="text" class="form-control" id="InputVacancy" placeholder="Вакансия">
-                            <label for="InputVacancySallary">Введите заработную плату</label>
+                            <label for="InputVacancySalary">Введите заработную плату</label>
                             <input type="text" class="form-control" id="InputVacancySalary" placeholder="Заработная плата">
                             <label for="InputVacancyExperience">Введите опыт работы</label>
                             <input type="text" class="form-control" id="InputVacancyExperience" placeholder="Опыт работы">
@@ -93,7 +92,7 @@
                     name: $("#InputVacancy").val(),
                     description: $("#InputVacancyDescription").val(),
                     date: Date.now(),
-                    salary: $("#InputVacancySallary").val(),
+                    salary: $("#InputVacancySalary").val(),
                     experience: $("#InputVacancyExperience").val(),
                     location: $("#InputVacancyLocation").val(),
                     id_busymode: $("#InputVacancyBusyMode:checked").val(),
