@@ -3,69 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/api/GetAllCompany.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/api/GetAllBusyMode.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/test/model/VacancyTest.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/VacancyDAL.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/api/GetAllCategory.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/BusyModeDAL.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/web/view/companies.html</file>
             <file>file:/E:/Programming/RGR/headhunter/web/index.html</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/config.properties</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/admin.xml</file>
             <file>file:/E:/Programming/RGR/headhunter/test/controllers/BusyModeControllerTest.java</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/controllers/CompanyController.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/mappers/JsonCompany.java</file>
             <file>file:/E:/Programming/RGR/headhunter/web/service/VacancyService.js</file>
             <file>file:/E:/Programming/RGR/headhunter/test/DAL/AdminDALTest.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/mappers/JsonBusyMode.java</file>
             <file>file:/E:/Programming/RGR/headhunter/web/META-INF/context.xml</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/model/Company.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/CompanyDAL.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/mappers/JsonCategory.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/BaseDAL.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/web/lib/css/bootstrap.css</file>
             <file>file:/E:/Programming/RGR/headhunter/test/DAL/BusyModeDALTest.java</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/controllers/VacancyController.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/test/model/CategoryTest.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/api/GetVacancyForCompany.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/web/controllers/CompanyController.js</file>
+            <file>file:/E:/Programming/RGR/headhunter/web/controllers/VacancyController.js</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/busymode.xml</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/api/GetBusyModeById.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/web/view/vacancy.html</file>
-            <file>file:/E:/Programming/RGR/headhunter/test/DAL/VacancyDALTest.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/web/lib/css/bootstrap.min.css</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/controllers/BusyModeController.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/api/GetAllAdmin.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/api/GetCompanyById.java</file>
             <file>file:/E:/Programming/RGR/headhunter/test/controllers/AdminControllerTest.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/model/Category.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/test/DAL/CategoryDALTest.java</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/AdminDAL.java</file>
             <file>file:/E:/Programming/RGR/headhunter/test/controllers/CategoryControllerTest.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/vacancy.xml</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/model/BusyMode.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/test/controllers/VacancyControllerTest.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/test/controllers/CompanyControllerTest.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/company.xml</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/BusyModeDAL.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/api/DeleteAdmin.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/web/service/CategoryService.js</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/api/DeleteBusyMode.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/api/GetVacancyById.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/api/DeleteCategory.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/config.properties</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/mappers/JsonAdmin.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/api/DeleteCompany.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/test/DAL/CompanyDALTest.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/model/Admin.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/web/controllers/CategoryController.js</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/api/InsertCompany.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/web/controllers/VacancyController.js</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/api/InsertCategory.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/mappers/JsonVacancy.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/api/GetAllVacancy.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/DAL/CategoryDAL.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/api/InsertBusyMode.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/config.xml</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/api/GetCategoryById.java</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/category.xml</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/controllers/CategoryController.java</file>
-            <file>file:/E:/Programming/RGR/headhunter/src/java/model/Vacancy.java</file>
             <file>file:/E:/Programming/RGR/headhunter/src/java/controllers/AdminController.java</file>
+            <file>file:/E:/Programming/RGR/headhunter/web/service/CompanyService.js</file>
+            <file>file:/E:/Programming/RGR/headhunter/src/java/mybatis/company.xml</file>
         </group>
     </open-files>
 </project-private>
