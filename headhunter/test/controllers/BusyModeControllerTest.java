@@ -42,7 +42,7 @@ public class BusyModeControllerTest {
     @Test
     public void testUpdateBusyMode() {
         System.out.println("BusyModeController updateBusyMode");
-        BusyMode busymode = new BusyMode(1, "nBusyMode");
+        BusyMode busymode = new BusyMode(100, "nBusyMode");
         BusyModeController instance = new BusyModeController();
         int expResult = 1;
         int result = instance.updateBusyMode(busymode);

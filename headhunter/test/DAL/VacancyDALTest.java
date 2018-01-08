@@ -2,7 +2,6 @@ package DAL;
 
 import java.util.Date;
 import java.util.List;
-import model.Admin;
 import model.BusyMode;
 import model.Category;
 import model.Company;

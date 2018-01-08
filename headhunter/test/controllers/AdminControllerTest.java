@@ -41,7 +41,7 @@ public class AdminControllerTest {
     @Test
     public void testUpdateAdmin() {
         System.out.println("AdminController updateAdmin");
-        Admin admin = new Admin(1, "newuser", "newpassword");
+        Admin admin = new Admin(100, "newuser", "newpassword");
         AdminController instance = new AdminController();
         int expResult = 1;
         int result = instance.updateAdmin(admin);

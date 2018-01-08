@@ -1,11 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package api;
 
-import controllers.CompanyController;
 import controllers.CompanyController;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mappers.JsonCompany;
-import mappers.JsonCompany;
-import model.Company;
 import model.Company;
 
 @WebServlet(name = "GetCompanyById", urlPatterns = {"/GetCompanyById"})

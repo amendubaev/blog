@@ -1,12 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package api;
 
-import controllers.CategoryController;
-import controllers.VacancyController;
 import controllers.CompanyController;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,10 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import mappers.JsonCompany;
 import mappers.JsonVacancy;
-import model.Category;
-import model.Company;
 import model.Vacancy;
 
 @WebServlet(name = "GetVacancyForCompany", urlPatterns = {"/GetVacancyForCompany"})

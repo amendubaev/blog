@@ -1,8 +1,6 @@
 package controllers;
 
-import DAL.BusyModeDAL;
 import DAL.VacancyDAL;
-import DAL.CompanyDAL;
 import java.util.List;
 import model.BusyMode;
 import model.Category;
