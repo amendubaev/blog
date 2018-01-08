@@ -20,6 +20,17 @@ class CompanyController
         return list.length;
     }
 
+    getAllCompanyViewListGroupListBox() {
+        var list = this.getAllCompany();
+        var element = document.getElementById("companyList");
+        var html = "";
+        for (var i = 0; i < list.length; i++) {
+            html += "<option id='InputVacancyCompany' value='" + list[i].id + "'>" + list[i].name + "</a>";
+        }
+        element.innerHTML = html;
+        return list.length;
+    }
+
     getCompanyById(id) {
         return this.companyService.getCompanyById(id);
     }
