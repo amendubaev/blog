@@ -18,15 +18,14 @@ public class InsertCategory extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         String jsonObject = request.getParameter("json");
-        
-        try (PrintWriter out = response.getWriter()) 
-        {
-           Category category = JsonCategory.fromJSON(jsonObject);
-           CategoryController  categoryController = new CategoryController();
-           int res=categoryController.insertCategory(category);
-           out.print(res);
+
+        try (PrintWriter out = response.getWriter()) {
+            Category category = JsonCategory.fromJSON(jsonObject);
+            CategoryController categoryController = new CategoryController();
+            int res = categoryController.insertCategory(category);
+            out.print(res);
         }
     }
 
@@ -48,4 +47,3 @@ public class InsertCategory extends HttpServlet {
     }
 
 }
-
