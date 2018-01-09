@@ -133,28 +133,28 @@
                         }
                     });
 
-                    $("#deleteVacancy").click(function () {
-                        var vacancy = {
-                            id: id
-                        };
-                        $.ajax({
-                            url: "/headhunter/DeleteVacancy",
-                            type: "POST",
-                            dataType: "JSON",
-                            data: {
-                                json: JSON.stringify(vacancy)
-                            },
-                            success: function (data) {
-                                alert("Вакансия успешно удалена!");
-                                document.location.href = "/headhunter/";
-                            },
-                            error: function () {
-                                console.log("error");
-                            }
-                        });
+
+                });
+                $("#deleteVacancy").click(function () {
+                    var vacancy = {
+                        id: id
+                    };
+                    $.ajax({
+                        url: "/headhunter/DeleteVacancy",
+                        type: "POST",
+                        dataType: "JSON",
+                        data: {
+                            json: JSON.stringify(vacancy)
+                        },
+                        success: function (data) {
+                            alert("Вакансия успешно удалена!");
+                            document.location.href = "/headhunter/";
+                        },
+                        error: function () {
+                            console.log("error");
+                        }
                     });
                 });
-
             });
         </script>    
     </body>
